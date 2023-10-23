@@ -1,5 +1,7 @@
-function sumar(a, b) {
-  return a + b;
+class Catalogo{
+  getLista() {
+    return [];
+  }
 }
 
-export default sumar;
+export default Catalogo;
