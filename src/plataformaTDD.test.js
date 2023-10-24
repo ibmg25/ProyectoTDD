@@ -17,11 +17,19 @@ describe("Mostrar lista de katas", () => {
 
     const kata1 = new Kata();
     catalogo.insertarKata(kata1)
-    const kataEsperada = "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"
+    const kataEsperada = ["<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"];
     expect(catalogo.printLista()).toEqual(kataEsperada);
   });
 
-  
+  it("deberia mostrar una lista con varias katas", () => {
+
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2);
+    const listaEsperada = ["<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>", "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"];
+    expect(catalogo.printLista()).toEqual(listaEsperada);
+  });
 });
 
 

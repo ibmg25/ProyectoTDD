@@ -9,10 +9,12 @@ class Catalogo{
     this.listakatas.push(kata);
   }
   printLista() {
-    if (this.listakatas.length>0){
-      return this.listakatas[0].printKata();
-    }
-    return [];
+
+    const lista = [];
+    this.listakatas.forEach(kata => {
+      lista.push(kata.printKata());
+    });
+    return lista;
   }
 }
 
