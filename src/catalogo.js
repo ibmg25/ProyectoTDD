@@ -15,6 +15,7 @@ class Catalogo{
       lista.push(kata.printKata());
     });
     return lista.join(' ');
+
   }
 }
 

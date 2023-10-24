@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+text-align: center;
+background-color: #171810;
+color: #03FA6E;
+padding: 20px;
+margin: 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+
+font-size: 42px;
+}
+
+.kata {
+border: 1px solid #ccc;
+background-color: #fff;
+margin: 20px;
+padding: 10px;
+box-shadow: 2px 2px 5px #888888;
+background-color: #171810;
+}
+
+.title-kata {
+font-size: 18px;
+font-weight: bold;
+color: #03FA6E;
+}
+
+.description-kata {
+margin-top: 10px;
+}
+
+.category-kata,
+.difficulty-kata {
+margin-top: 5px;
+font-style: italic;
+}
+
+.category-kata::before {
+content: "Categoría: ";
+}
+
+.difficulty-kata::before {
+content: "Dificultad: ";
+}
+
+.description-kata,
+    .category-kata,
+    .difficulty-kata,
+    .category-kata::before,
+    .difficulty-kata::before {
+    color: white;
+}
