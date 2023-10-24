@@ -1,11 +1,5 @@
 import Catalogo from "./catalogo.js";
-
-
-class Kata{
-  printKata(){
-    return "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>";
-  }
-}
+import Kata from "./kata.js";
 
 describe("Mostrar lista de katas", () => {
 
@@ -16,7 +10,7 @@ describe("Mostrar lista de katas", () => {
 
   it("deberia mostrar una lista de katas vacia", () => {
 
-    expect(catalogo.getLista()).toEqual([]);
+    expect(catalogo.printLista()).toEqual([]);
   });
 
   it("deberia mostrar una lista con una kata", () => {
@@ -24,8 +18,10 @@ describe("Mostrar lista de katas", () => {
     const kata1 = new Kata();
     catalogo.insertarKata(kata1)
     const kataEsperada = "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"
-    expect(catalogo.getLista()).toEqual(kataEsperada);
+    expect(catalogo.printLista()).toEqual(kataEsperada);
   });
+
+  
 });
 
 
