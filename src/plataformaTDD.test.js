@@ -32,4 +32,16 @@ describe("Mostrar lista de katas", () => {
   });
 });
 
+describe("Filtrar katas por dificultad", () => {
 
+  let kata;
+  beforeEach(() => {
+    kata = new Kata();
+  });
+
+  it("deberia mostrar la dificultad de una kata", () => {
+
+    expect(kata.getDificultad()).toEqual("Media");
+  });
+
+});
