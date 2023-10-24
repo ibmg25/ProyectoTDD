@@ -17,7 +17,7 @@ describe("Mostrar lista de katas", () => {
 
     const kata1 = new Kata();
     catalogo.insertarKata(kata1)
-    const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='description-kata'>Descripción vacía</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div></div>";
+    const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripción vacía</div></div>";
     expect(catalogo.printLista()).toEqual(kataEsperada);
   });
 
@@ -27,7 +27,7 @@ describe("Mostrar lista de katas", () => {
     const kata2 = new Kata();
     catalogo.insertarKata(kata1);
     catalogo.insertarKata(kata2);
-    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='description-kata'>Descripción vacía</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='description-kata'>Descripción vacía</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div></div>";
+    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripción vacía</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripción vacía</div></div>";
     expect(catalogo.printLista()).toEqual(listaEsperada);
   });
 });

@@ -5,7 +5,7 @@ class Kata{
   }
 
     printKata(){
-      return "<div class='kata'><div class='title-kata'>Kata</div><div class='description-kata'>Descripción vacía</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div></div>";
+      return "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripción vacía</div></div>";
     }
 
     setDificultad(dif){
