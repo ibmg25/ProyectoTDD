@@ -10,14 +10,14 @@ describe("Mostrar lista de katas", () => {
 
   it("deberia mostrar una lista de katas vacia", () => {
 
-    expect(catalogo.printLista()).toEqual([]);
+    expect(catalogo.printLista()).toEqual('');
   });
 
   it("deberia mostrar una lista con una kata", () => {
 
     const kata1 = new Kata();
     catalogo.insertarKata(kata1)
-    const kataEsperada = ["<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"];
+    const kataEsperada = "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>";
     expect(catalogo.printLista()).toEqual(kataEsperada);
   });
 
@@ -27,7 +27,7 @@ describe("Mostrar lista de katas", () => {
     const kata2 = new Kata();
     catalogo.insertarKata(kata1);
     catalogo.insertarKata(kata2);
-    const listaEsperada = ["<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>", "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>"];
+    const listaEsperada = "<div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div> <div><p>Título: Kata</p><p>Descripción: Descripción vacía</p><p>Categoría: Ninguna</p><p>Dificultad: Media</p></div>";
     expect(catalogo.printLista()).toEqual(listaEsperada);
   });
 });

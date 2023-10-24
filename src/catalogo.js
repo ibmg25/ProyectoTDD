@@ -14,7 +14,7 @@ class Catalogo{
     this.listakatas.forEach(kata => {
       lista.push(kata.printKata());
     });
-    return lista;
+    return lista.join(' ');
   }
 }
 
