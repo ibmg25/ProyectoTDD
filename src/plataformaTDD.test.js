@@ -39,9 +39,14 @@ describe("Filtrar katas por dificultad", () => {
     kata = new Kata();
   });
 
-  it("deberia mostrar la dificultad de una kata", () => {
+  it("deberia mostrar la dificultad de una kata (Media)", () => {
 
     expect(kata.getDificultad()).toEqual("Media");
+  });
+
+  it("deberia asignar la dificultad de una kata", () => {
+    kata.setDificultad("Facil");
+    expect(kata.getDificultad()).toEqual("Facil");
   });
 
 });
