@@ -80,6 +80,7 @@ describe("Filtrar katas por dificultad", () => {
     const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div>";
     expect(catalogo.printLista()).toEqual(listaEsperada);
   });
+
   describe("Buscar Katas por parametro", () => {
 
     let catalogo;
@@ -93,6 +94,14 @@ describe("Filtrar katas por dificultad", () => {
       const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
       expect(kata1.getTitulo()).toEqual("Kata");
     });
+    it("deberia mostrar la kata de una lista segun el nombre", () => {
+      const kata1 = new Kata();
+      const nombre="kata";
+     catalogo.insertarKata(kata1)
+     const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+     expect(catalogo.buscarPorNombre(nombre)).toEqual(listaEsperada);
+   });
+
   
   });
 });
