@@ -34,6 +34,11 @@ describe("Mostrar lista de katas", () => {
 
 describe("Filtrar katas por dificultad", () => {
 
+  let catalogo;
+  beforeEach(() => {
+    catalogo = new Catalogo();
+  });
+
   let kata;
   beforeEach(() => {
     kata = new Kata();
@@ -52,6 +57,28 @@ describe("Filtrar katas por dificultad", () => {
   it("deberia asignar la dificultad de una kata Dificil", () => {
     kata.setDificultad("Dificil");
     expect(kata.getDificultad()).toEqual("Dificil");
+  });
+
+  it("deberia mostrar una lista con katas de dificultad Facil", () => {
+
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata();
+    const kata4 = new Kata();
+    kata1.setDificultad("Facil");
+    kata4.setDificultad("Facil");
+    kata2.setDificultad("Dificil");
+    kata3.setDificultad("Media");
+    if (kata1.getDificultad() == "Facil")
+      catalogo.insertarKata(kata1);
+    if (kata2.getDificultad() == "Facil")
+      catalogo.insertarKata(kata2);
+    if (kata3.getDificultad() == "Facil")
+      catalogo.insertarKata(kata3);
+    if (kata4.getDificultad() == "Facil")
+      catalogo.insertarKata(kata4);
+    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div>";
+    expect(catalogo.printLista()).toEqual(listaEsperada);
   });
 
 });
