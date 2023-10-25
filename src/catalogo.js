@@ -17,6 +17,12 @@ class Catalogo{
     return lista.join(' ');
 
   }
+  buscaPorTitulo(tit)
+  {
+    for (i = 0; i < this.listakatas.length; i++) {
+        
+    }
+  }
 }
 
 export default Catalogo;
