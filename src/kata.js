@@ -1,14 +1,14 @@
 class Kata{
 
   constructor(){
-    this.titulo = "KATA";
-    this.categoria = "";
-    this.dificultad = "";
-    this.descripcion = "";
+    this.titulo = "Kata";
+    this.categoria = "Ninguna";
+    this.dificultad = "Media";
+    this.descripcion = "Descripcion vacia";
   }
 
     printKata(){
-      return "<div class='kata'><div class='title-kata'>" + this.titulo + "</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripción vacía</div></div>";
+      return "<div class='kata'><div class='title-kata'>" + this.titulo + "</div><div class='category-kata'>"+ this.categoria + "</div><div class='difficulty-kata'>"+ this.dificultad + "</div><div class='description-kata'>"+ this.descripcion + "</div></div>";
     }
 
     setDificultad(dif){
