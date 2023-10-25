@@ -1,3 +1,4 @@
+import Kata from "./kata.js";
 
 class Catalogo{
 
@@ -17,10 +18,12 @@ class Catalogo{
     return lista.join(' ');
 
   }
-  buscaPorTitulo(tit)
-  {
-    for (i = 0; i < this.listakatas.length; i++) {
-        
+  buscarPorTitulo(tit)
+  {  
+    for (const kata of this.listakatas) {
+      if (kata.getTitulo() == tit) {
+        return kata.printKata();
+        }
     }
   }
 }
