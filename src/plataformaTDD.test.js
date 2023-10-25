@@ -91,7 +91,7 @@ describe("Filtrar katas por dificultad", () => {
        const kata1 = new Kata();
       catalogo.insertarKata(kata1)
       const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
-      expect(kata1.getNombre()).toEqual('kata');
+      expect(kata1.getTitulo()).toEqual("Kata");
     });
   
   });
