@@ -130,6 +130,10 @@ describe("Filtrar katas por dificultad", () => {
     expect(katasPorCategoria.length).toEqual(1);
   });
 
+  it("debería mostrar una lista vacía si no hay katas de una dificultad", () => {
+    const katasPorCategoria = catalogo.buscarPorCategoria("Dificil");
+    expect(katasPorCategoria.length).toEqual(0);
+  });
   
   });
 });
