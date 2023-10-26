@@ -64,6 +64,19 @@ class Validador{
         }
         return valido;
     }
+
+    validarEstadoKata(kata){
+        let valido = false;
+        const estados = [
+            "no terminado",
+            "terminado"
+        ];
+        if (estados.includes(kata.getEstado())) {
+            valido = true;
+        }
+        return valido;
+
+    }
 }
 
 

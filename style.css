@@ -37,7 +37,7 @@ margin-top: 10px;
 }
 
 .category-kata,
-.difficulty-kata {
+.difficulty-kata,.status-kata {
 margin-top: 5px;
 font-style: italic;
 }
@@ -50,11 +50,17 @@ content: "Categoría: ";
 content: "Dificultad: ";
 }
 
+.estatus-kata::before {
+content: "Estado: ";
+}
+
 .description-kata,
     .category-kata,
-    .difficulty-kata,
+    .difficulty-kata, 
+    .status-kata,
     .category-kata::before,
-    .difficulty-kata::before {
+    .difficulty-kata::before,
+    .status-kata::before {
     color: white;
 }
 

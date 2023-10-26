@@ -5,6 +5,7 @@ const tituloKata = document.querySelector("#titulo-kata");
 const categoriaKata = document.querySelector("#categoria-kata");
 const dificultadKata = document.querySelector("#dificultad-kata");
 const descripcionKata = document.querySelector("#descripcion-kata");
+const estadoKata = document.querySelector("#estado-kata");
 const formCrearKata = document.querySelector("#crear_kata-form");
 const mensaje = document.querySelector("#mensaje-div");
 
@@ -18,8 +19,9 @@ formCrearKata.addEventListener("submit", (event) => {
     const categoria = categoriaKata.value;
     const dificultad = dificultadKata.value;
     const descripcion = descripcionKata.value;
+    const estado = estadoKata.value;
 
-    const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    const kata = new Kata(titulo, categoria, dificultad, descripcion, estado);
     
     
     mensaje.textContent = catalogo.insertarKata(kata);
