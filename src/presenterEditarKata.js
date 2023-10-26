@@ -1,2 +1,8 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
+
+const formEditarKata=document.querySelector("#editar_kata-form");
+const tituloKata = document.querySelector("#titulo-kata");
+const categoriaKata = document.querySelector("#categoria-kata");
+const dificultadKata = document.querySelector("#dificultad-kata");
+const descripcionKata = document.querySelector("#descripcion-kata");
