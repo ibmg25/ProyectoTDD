@@ -10,7 +10,7 @@ describe("Mostrar lista de katas", () => {
 
   it("deberia mostrar una lista de katas vacia", () => {
 
-    expect(catalogo.printLista()).toEqual('');
+    expect(catalogo.printLista()).toEqual("<div class='catalog-message'>Sin katas aún. ¡Sé el primero en crear una!</div>");
   });
 
   it("deberia mostrar una lista con una kata", () => {
