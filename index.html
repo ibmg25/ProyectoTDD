@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTestCoach</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <h1>Catálogo</h1>
+    <form id="buscar-form">
+      <label for="titulo">Titulo:</label>
+      <input type="titulo" id="titulo" />
+      <input type="submit" value="Buscar" id="buscar-button" />
+
+      <label for="dificultad">Dificultad:</label>
+      <select id="filtrar-dificultad-kata" name="dificultad" required>
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+      </select>
+
+      <label for="categoria">Categoria:</label>
+      <select id="filtrar-categoria-kata" name="categoria" required>
+      <option value="Ninguna">Ninguna</option>
+      <option value="Lógica y matematicas">Lógica y matematicas</option>
+      <option value="Validacion y formularios">Validacion y formularios</option>
+      </select>
+      <!-- <label for="Descripcion">Descripcion:</label>
+      <input type="text" id="Descripcion" />
+      <input type="submit" value="Buscar" id="Descripcion-button" />
+      <label for="Categoria">Categoria:</label>
+      <input type="Categoria" id="Categoria" />
+      <input type="submit" value="Buscar" id="Categoria-button" />
+      <label for="Dificultad">Dificultad:</label>
+      <input type="Dificultad" id="Dificultad" />
+      <input type="submit" value="Buscar" id="Dificultad-button" />-->
+    </form> 
+    <div id="resultado-div"></div>
+
+    <a class="boton-crear_kata" href="pages/crear_kata.html">+</a>  
+
+    <script type="module" src="./src/presenter.js"></script>
+  </body>
+</html>

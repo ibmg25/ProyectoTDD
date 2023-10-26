@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+text-align: center;
+background-color: #171810;
+color: #03FA6E;
+padding: 20px;
+margin: 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+
+font-size: 42px;
+}
+
+.kata {
+border: 1px solid #ccc;
+background-color: #fff;
+margin: 20px;
+padding: 10px;
+box-shadow: 2px 2px 5px #888888;
+background-color: #171810;
+}
+
+.title-kata {
+font-size: 18px;
+font-weight: bold;
+color: #03FA6E;
+}
+
+.description-kata {
+margin-top: 10px;
+}
+
+.category-kata,
+.difficulty-kata {
+margin-top: 5px;
+font-style: italic;
+}
+
+.category-kata::before {
+content: "Categoría: ";
+}
+
+.difficulty-kata::before {
+content: "Dificultad: ";
+}
+
+.description-kata,
+    .category-kata,
+    .difficulty-kata,
+    .category-kata::before,
+    .difficulty-kata::before {
+    color: white;
+}
+
+.catalog-message {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    font-size: 16px; 
+    text-align: center; 
+    color: #333; 
+    border-radius: 5px;
+    margin: 10px 0; 
+  }
+
+.boton-crear_kata {
+    width: 50px;
+    height: 50px;
+    background-color: #03FA6E; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    font-size: 40px; 
+    font-weight: bold;
+    text-decoration: none; 
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1; 
+}
+
+#crear_kata-form {
+    background-color: #171810;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 5vh auto;
+}
+
+#crear_kata-form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+#crear_kata-form input[type="text"],
+#crear_kata-form select,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#crear_kata-form select{
+    width: 95%;
+}
+
+#crear_kata-form input[type="submit"] {
+    background-color: #03FA6E;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#crear_kata-form input[type="submit"]:hover {
+    background-color:black;
+    color: #03FA6E;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+ #mensaje-div {
+    background-color: #171810; 
+    color: #03FA6E; 
+    padding: 10px; 
+    margin-top: 20px; 
+    text-align: center; 
+    display: none; 
+    position: static;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
