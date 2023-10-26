@@ -15,10 +15,11 @@ div.innerHTML = catalogo.printLista();
  form.addEventListener("submit", (event) => {
    event.preventDefault();
 
-   const titulo = toString(Titulo.value);
+   const titulo =Titulo.value;
    const catalogo2 = new Catalogo();
-   const kataBuscada = new Kata();
-   div.innerHTML = catalogo.buscarPorTitulo("Kata").printLista();
+   const kataBuscada=catalogo.buscarPorTitulo(titulo);
+   catalogo2.insertarKata(kataBuscada);
+   div.innerHTML = catalogo2.printLista();
  });
 
 
