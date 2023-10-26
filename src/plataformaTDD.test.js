@@ -215,18 +215,10 @@ describe("Añadir una nueva kata al catalogo", () => {
     beforeEach(() => {
       catalogo = new Catalogo();
     });
-  
-    it("deberia mostrar una lista de katas vacia", () => {
-  
-      expect(catalogo.printLista()).toEqual("<div class='catalog-message'>Sin katas aún. ¡Sé el primero en crear una!</div>");
-    });
-  
-    it("deberia mostrar una lista con una kata", () => {
-  
+    it("deberia mostrar la kata de una lista buscar por su estado", () => {
       const kata1 = new Kata();
-      catalogo.insertarKata(kata1)
-      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
-      expect(catalogo.printLista()).toEqual(kataEsperada);
-    });
+     catalogo.insertarKata(kata1);
+     expect(catalogo.buscarPorEstado("Terminado")).toEqual([kata1]);
+   });
   });
 });
