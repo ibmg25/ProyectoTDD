@@ -104,6 +104,19 @@ describe("Filtrar katas por dificultad", () => {
     const katasPorCategoria = catalogo.buscarPorCategoria("Algoritmos");
     expect(katasPorCategoria.length).toEqual(0);
   });
+  it("debería mostrar una lista con las katas de una categoría", () => {
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata();
+    kata1.setCategoria("Lógica y matematicas");
+    kata2.setCategoria("Validacion y formuñarios");
+    kata3.setCategoria("Lógica y matematicas");
+    catalogo.insertarKata(kata3);
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2);
+    const katasPorCategoria = catalogo.buscarPorCategoria("Lógica y matematicas");
+    expect(katasPorCategoria.length).toEqual(2);
+  });
 
   
   });
