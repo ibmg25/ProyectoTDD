@@ -45,6 +45,10 @@ class Catalogo{
   buscarPorDificultad(dif) {
     return this.listakatas.filter(kata => kata.getDificultad() === dif); 
   }
+
+  buscarPorEstado(estado) {
+    return this.listakatas.filter(kata => kata.getEstado() === estado); 
+  }
 }
 
 export default Catalogo;
