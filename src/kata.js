@@ -34,6 +34,11 @@ class Kata{
     getDescripcion(){
       return this.descripcion;
     }
+
+    getEstado(){
+      return this.estado;
+    }
+
 }
 
 export default Kata;
