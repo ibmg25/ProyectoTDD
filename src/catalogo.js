@@ -8,7 +8,9 @@ class Catalogo{
 
   insertarKata(kata){
     this.listakatas.push(kata);
-    if (kata.getTitulo().length>3 && kata.getTitulo().length<100) {
+    const longitudMinima = 3;
+    const longitudMaxima = 100;
+    if (kata.getTitulo().length>longitudMinima && kata.getTitulo().length<longitudMaxima) {
       return kata.getTitulo()+" agregada al catálogo con éxito.";
     }
     return "El título no es válido.";
