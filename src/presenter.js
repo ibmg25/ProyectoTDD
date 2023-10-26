@@ -6,11 +6,11 @@ const div = document.querySelector("#resultado-div");
 const catalogo = new Catalogo();
 
 const kata1 = new Kata();
-const kata2 = new Kata("Kata 2", "Ninguna", "Media", "nueva descripcion");
-const kata3 = new Kata("Kata 3", "Ninguna", "Facil", "nueva descripcion");
-const kata4 = new Kata("Kata 4", "Ninguna", "Dificil", "nueva descripcion");
-const kata5 = new Kata("Kata 5", "Ninguna", "Media", "nueva descripcion");
-const kata6 = new Kata("Kata 6", "Lógica y matematicas", "Media", "nueva descripcion");
+const kata2 = new Kata("Kata 2", "Ninguna", "Media", "nueva descripcion","Terminado");
+const kata3 = new Kata("Kata 3", "Ninguna", "Facil", "nueva descripcion","Terminado");
+const kata4 = new Kata("Kata 4", "Ninguna", "Dificil", "nueva descripcion","No Terminado");
+const kata5 = new Kata("Kata 5", "Ninguna", "Media", "nueva descripcion" ,"Terminado");
+const kata6 = new Kata("Kata 6", "Lógica y matematicas", "Media", "nueva descripcion","No Terminado");
 catalogo.insertarKata(kata1);
 catalogo.insertarKata(kata2);
 catalogo.insertarKata(kata3);
