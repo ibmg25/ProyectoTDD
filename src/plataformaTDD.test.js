@@ -104,3 +104,26 @@ describe("Filtrar katas por dificultad", () => {
   
   });
 });
+
+
+describe("Añadir una nueva kata al catalogo", () => {
+
+  let catalogo;
+  beforeEach(() => {
+    catalogo = new Catalogo();
+  });
+
+  it("deberia devolver un mensaje de confirmacion exitoso al insertar una kata al catalogo", () => {
+
+    const kata = new Kata();
+    const mensajeEsperado = "Kata agregada al catálogo con éxito.";
+    expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
+  });
+
+  it("deberia devolver un mensaje de confirmacion exitoso al insertar una nueva kata al catalogo", () => {
+
+    const kata = new Kata("Kata nueva", "sin categoria", "media", "nueva descripcion");
+    const mensajeEsperado = "Kata nueva agregada al catálogo con éxito.";
+    expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
+  });
+});

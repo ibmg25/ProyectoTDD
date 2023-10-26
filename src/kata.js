@@ -1,10 +1,10 @@
 class Kata{
 
-  constructor(){
-    this.titulo = "Kata";
-    this.categoria = "Ninguna";
-    this.dificultad = "Media";
-    this.descripcion = "Descripcion vacia";
+  constructor(titulo = "Kata", categoria = "Ninguna", dificultad = "Media", descripcion = "Descripcion vacia"){
+    this.titulo = titulo;
+    this.categoria = categoria;
+    this.dificultad = dificultad;
+    this.descripcion = descripcion;
   }
 
     printKata(){
