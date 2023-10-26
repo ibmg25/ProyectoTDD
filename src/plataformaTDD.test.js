@@ -149,7 +149,7 @@ describe("Filtrar katas por dificultad", () => {
     expect(katasPorCategoria.length).toEqual(2);
   });
 
-  it("deberia mostrar el estado de la Kata", () => {
+  it("deberia mostrar el estado por defecto de la Kata", () => {
     const kata1 = new Kata();
    catalogo.insertarKata(kata1)
    const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div>";
@@ -164,6 +164,19 @@ describe("Filtrar katas por dificultad", () => {
  expect(kata1.getEstado()).toEqual("terminado");
 });
   
+it("deberia mostrar solo las katas terminadas", () => {
+  const kata1 = new Kata();
+  const kata2 = new Kata();
+  const kata3 = new Kata();
+  kata1.setEstado("terminado");
+  kata3.setEstado("terminado");
+ catalogo.insertarKata(kata1);
+  catalogo.insertarKata(kata2);
+  catalogo.insertarKata(kata3);
+  const katasPorEstado = catalogo.buscarPorEstado("terminado");
+  expect(katasPorEstado.length).toEqual(2);
+});
+
   
   });
 });
