@@ -9,11 +9,15 @@ const descripcionKata = document.querySelector("#descripcion-kata");
 
 formEditarKata.addEventListener("submit", (event) => {
      event.preventDefault();
-     
+
     const titulo = tituloKata.value;
     const categoria = categoriaKata.value;
     const dificultad = dificultadKata.value;
     const descripcion = descripcionKata.value;
 
-
+    const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    
+    
+    mensaje.textContent = catalogo.insertarKata(kata);
+    mensaje.style.display = "block";
 });
