@@ -47,7 +47,7 @@ class Catalogo{
   }
 
   buscarPorEstado(estado) {
-    return this.listakatas;
+    return this.listakatas.filter(kata => kata.getEstado() === estado); 
   }
 }
 
