@@ -250,6 +250,35 @@ describe("Buscar kata por estado", () => {
     const katasPorEstado = catalogo.buscarPorEstado("Terminado");
     expect(katasPorEstado.length).toEqual(1);
   });
+
+  it("deberia devolver una lista de katas con estado terminado", () => {
+
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata("kata", "Ninguna", "Media", "Sin decripcion", "Terminado");
+    const kata4 = new Kata("kata", "Ninguna", "Media", "Sin decripcion", "Terminado");
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2);
+    catalogo.insertarKata(kata3);
+    catalogo.insertarKata(kata4);
+    const katasPorEstado = catalogo.buscarPorEstado("Terminado");
+    expect(katasPorEstado.length).toEqual(2);
+  });
 });
 
+describe("Marcar una Kata como Terminado", () => {
 
+  // let catalogo;
+  // beforeEach(() => {
+  //   catalogo = new Catalogo();
+    
+  // });
+
+  it("deberia modificar el estado de una kata", () => {
+
+    const kata = new Kata();
+    kata.setEstado("Terminado")
+    expect(kata.getEstado()).toEqual("Terminado");
+  });
+
+});
