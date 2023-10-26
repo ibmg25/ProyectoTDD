@@ -50,9 +50,14 @@ content: "Categoría: ";
 content: "Dificultad: ";
 }
 
+.estado-kata::before {
+    content: "Estado: ";
+    }
+
 .description-kata,
     .category-kata,
     .difficulty-kata,
+    .estado-kata,
     .category-kata::before,
     .difficulty-kata::before {
     color: white;
