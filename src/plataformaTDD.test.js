@@ -17,7 +17,7 @@ describe("Mostrar lista de katas", () => {
 
     const kata1 = new Kata();
     catalogo.insertarKata(kata1)
-    const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+    const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div>";
     expect(catalogo.printLista()).toEqual(kataEsperada);
   });
 
@@ -27,7 +27,7 @@ describe("Mostrar lista de katas", () => {
     const kata2 = new Kata();
     catalogo.insertarKata(kata1);
     catalogo.insertarKata(kata2);
-    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div>";
     expect(catalogo.printLista()).toEqual(listaEsperada);
   });
 });
@@ -77,7 +77,7 @@ describe("Filtrar katas por dificultad", () => {
       catalogo.insertarKata(kata3);
     if (kata4.getDificultad() == "Facil")
       catalogo.insertarKata(kata4);
-    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div>";
+    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div>";
     expect(catalogo.printLista()).toEqual(listaEsperada);
   });
 
@@ -91,7 +91,7 @@ describe("Filtrar katas por dificultad", () => {
     it("deberia mostrar el titulo de la cata", () => {
        const kata1 = new Kata();
       catalogo.insertarKata(kata1)
-      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>No terminado</div></div>";
       expect(kata1.getTitulo()).toEqual("Kata");
     });
     it("deberia mostrar la kata de una lista segun el nombre", () => {
@@ -249,7 +249,9 @@ describe("Filtrar katas por estado", () => {
 
   it("deberia marcar una kata como terminada", () => {
     const kata1 = new Kata("kata", "Ninguna", "Facil", "nueva descripcion");
+    kata1.setTerminado();
     catalogo.insertarKata(kata1);
+    const katasPorEstado = catalogo.buscarPorEstado("No terminado");
     expect(katasPorEstado.length).toEqual(0);
   });
 
