@@ -11,7 +11,7 @@ class Catalogo{
   insertarKata(kata){
     const validador = new Validador();
 
-    if (validador.validarTituloKata(kata) && validador.validarCategoriaKata(kata)) {
+    if (validador.validarTituloKata(kata) && validador.validarCategoriaKata(kata) && validador.validarDificultadKata(kata) && validador.validarDescripcionKata(kata)) {
       this.listakatas.push(kata);
       return kata.getTitulo()+" agregada al catálogo con éxito.";
     }
