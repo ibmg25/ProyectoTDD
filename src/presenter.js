@@ -74,7 +74,18 @@ filtroEstado.addEventListener("change", (event) => {
 });
 
 
-
+formMarcar.addEventListener("submit", (event) => {
+    event.preventDefault();
+ 
+    const titulo = kataAMarcar.value;
+    const catalogo2 = new Catalogo();
+    const kataBuscada=catalogo.buscarPorTitulo(titulo);
+    kataBuscada.setTerminado();
+    catalogo.buscarPorEstado(estadoSeleccionado).forEach(kata => {
+        catalogo2.insertarKata(kata)
+    });
+    div.innerHTML = catalogo2.printLista();
+ });
 
 
 
