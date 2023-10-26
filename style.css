@@ -69,3 +69,70 @@ content: "Dificultad: ";
     border-radius: 5px;
     margin: 10px 0; 
   }
+
+.boton-crear_kata {
+    width: 50px;
+    height: 50px;
+    background-color: #03FA6E; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    font-size: 40px; 
+    font-weight: bold;
+    text-decoration: none; 
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1; 
+}
+
+#crear_kata-form {
+    background-color: #171810;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 5vh auto;
+}
+
+#crear_kata-form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+select{
+    width: 95%;
+}
+
+#crear_kata-form input[type="submit"] {
+    background-color: #03FA6E;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#crear_kata-form input[type="submit"]:hover {
+    background-color:black;
+    color: #03FA6E;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
