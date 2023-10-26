@@ -1,4 +1,5 @@
 import Kata from "./kata.js";
+import Validador from "./validador.js";
 
 class Catalogo{
 
@@ -6,13 +7,12 @@ class Catalogo{
     this.listakatas = []; 
   }
 
-  insertarKata(kata){
-    this.listakatas.push(kata);
-    const longitudMinima = 3;
-    const longitudMaxima = 100;
-    const regex = /^[A-Za-z0-9\s]+$/;
 
-    if (kata.getTitulo().length>longitudMinima && kata.getTitulo().length<longitudMaxima && regex.test(kata.getTitulo())) {
+  insertarKata(kata){
+    const validador = new Validador();
+
+    if (validador.validarTituloKata(kata)===true) {
+      this.listakatas.push(kata);
       return kata.getTitulo()+" agregada al catálogo con éxito.";
     }
     return "El título no es válido.";

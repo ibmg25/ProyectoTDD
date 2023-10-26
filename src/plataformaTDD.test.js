@@ -169,4 +169,7 @@ describe("Añadir una nueva kata al catalogo", () => {
     const mensajeEsperado = "El título no es válido.";
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
+
+  
+
 });
