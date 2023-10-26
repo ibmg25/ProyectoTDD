@@ -47,7 +47,13 @@ class Catalogo{
   }
   buscarPorEstado(esta)
   {
-    
+    for(let i=0;i<this.listakatas;i++)
+    {
+      if(this.listakatas[i].getEstado()==esta)
+      {
+        return this.listakatas[i];
+      }
+    }
   }
 }
 
