@@ -1,19 +1,18 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
 
-// const first = document.querySelector("#primer-numero");
-// const second = document.querySelector("#segundo-numero");
-// const form = document.querySelector("#sumar-form");
+const Titulo = document.querySelector("#Titulo");
+const form = document.querySelector("#buscar-form");    
 const div = document.querySelector("#resultado-div");
 
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//   const firstNumber = Number.parseInt(first.value);
-//   const secondNumber = Number.parseInt(second.value);
+  const firstNumber = Number.parseInt(first.value);
+  const secondNumber = Number.parseInt(second.value);
 
-//   div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
-// });
+ div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+ });
 
 const catalogo = new Catalogo();
 const kata1 = new Kata();
