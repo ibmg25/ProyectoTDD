@@ -39,6 +39,10 @@ class Kata{
       return this.estado;
     }
 
+    setTerminado(){
+      this.estado = "Terminado";
+    }
+
 }
 
 export default Kata;
