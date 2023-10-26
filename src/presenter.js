@@ -62,6 +62,9 @@ filtroCategoria.addEventListener("change", (event) => {
 filtroEstado.addEventListener("change", (event) => {
    const estadoSeleccionado = event.target.value;
    const catalogo2=new Catalogo();
+   catalogo.buscarPorEstado(estadoSeleccionado).forEach(kata => {
+    catalogo2.insertarKata(kata)
+});
     
 });
 
