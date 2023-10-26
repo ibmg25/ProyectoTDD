@@ -268,17 +268,24 @@ describe("Buscar kata por estado", () => {
 
 describe("Marcar una Kata como Terminado", () => {
 
-  // let catalogo;
-  // beforeEach(() => {
-  //   catalogo = new Catalogo();
+  let catalogo;
+  beforeEach(() => {
+    catalogo = new Catalogo();
     
-  // });
+  });
 
   it("deberia modificar el estado de una kata", () => {
 
     const kata = new Kata();
     kata.setEstado("Terminado")
     expect(kata.getEstado()).toEqual("Terminado");
+  });
+
+  it("deberia cambiar el estado de una kata en el catalogo a terminado", () => {
+
+    const kata = new Kata();
+    catalogo.insertarKata(kata);
+    expect(catalogo.cambiarEstadoKata("Kata")).toEqual("<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>Terminado</div></div>");
   });
 
 });

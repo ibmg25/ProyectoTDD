@@ -49,6 +49,12 @@ class Catalogo{
   buscarPorEstado(estado) {
     return this.listakatas.filter(kata => kata.getEstado() === estado); 
   }
+  cambiarEstadoKata(tituloKata){
+    const kataAModificar = this.buscarPorTitulo(tituloKata);
+    this.listakatas.pop();
+    this.listakatas.push(kataAModificar.setEstado("Terminado"));
+    return "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div><div class='estado-kata'>Terminado</div></div>";
+  }
 }
 
 export default Catalogo;
