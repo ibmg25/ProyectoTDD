@@ -24,6 +24,7 @@ const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
 const filtroDificultad = document.querySelector("#filtrar-dificultad-kata")
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata")
+cont filtroEstado=document.querySelector("#filtrar-estado-kata");
 
 formBuscarTitulo.addEventListener("submit", (event) => {
    event.preventDefault();
@@ -58,6 +59,7 @@ filtroCategoria.addEventListener("change", (event) => {
     div.innerHTML = catalogo2.printLista();
     
 });
+
 
 
 
