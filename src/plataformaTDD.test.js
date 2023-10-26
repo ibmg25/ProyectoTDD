@@ -220,5 +220,14 @@ describe("Añadir una nueva kata al catalogo", () => {
      catalogo.insertarKata(kata1);
      expect(catalogo.buscarPorEstado("No Terminado")).toEqual([kata1]);
    });
+   it("deberia mostrar una lista de katas segun su buscar por su estado", () => {
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata();
+   catalogo.insertarKata(kata1);
+   catalogo.insertarKata(kata2);
+   catalogo.insertarKata(kata3);
+   expect(catalogo.buscarPorEstado("No Terminado")).toEqual([kata1,kata2,kata3]);
+ });
   });
 });
