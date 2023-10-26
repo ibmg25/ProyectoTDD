@@ -38,6 +38,10 @@ class Kata{
     {
       return this.estado;
     }
+    setEstado(est)
+    {
+      this.estado=est;
+    }
 }
 
 export default Kata;
