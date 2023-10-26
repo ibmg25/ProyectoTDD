@@ -13,15 +13,22 @@
   <body>
     <h1>Catálogo</h1>
     <form id="buscar-form">
-      <label for="Titulo">Titulo:</label>
-      <input type="Titulo" id="Titulo" />
+      <label for="titulo">Titulo:</label>
+      <input type="text" id="titulo" />
       <input type="submit" value="Buscar" id="buscar-button" />
-      <label for="Descripcion">Descripcion:</label>
-      <input type="Descripcion" id="Descripcion" />
+
+      <label for="dificultad">Dificultad:</label>
+      <select id="filtrar-dificultad-kata" name="dificultad" required>
+      <option value="Facil">Facil</option>
+      <option value="Intermedia">Media</option>
+      <option value="Dificil">Dificil</option>
+      </select>
+      <!-- <label for="Descripcion">Descripcion:</label>
+      <input type="text" id="Descripcion" />
       <input type="submit" value="Buscar" id="Descripcion-button" />
       <label for="Categoria">Categoria:</label>
-      <input type="Categoria" id="Categoria" />
-      <input type="submit" value="Buscar" id="Categoria-button" />
+      <input type="text" id="Categoria" />
+      <input type="submit" value="Buscar" id="Categoria-button" /> -->
     </form> 
     <div id="resultado-div"></div>
 
