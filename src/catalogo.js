@@ -49,6 +49,14 @@ class Catalogo{
   buscarPorEstado(estado) {
     return this.listakatas.filter(kata => kata.getEstado() === estado); 
   }
+
+  marcarTerminado(nombreKata){
+    this.listakatas.forEach(kata => {
+      if (kata.getTitulo() == nombreKata){
+        kata.setTerminado();
+      }
+    });
+  }
 }
 
 export default Catalogo;

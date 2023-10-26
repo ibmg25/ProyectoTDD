@@ -255,4 +255,12 @@ describe("Filtrar katas por estado", () => {
     expect(katasPorEstado.length).toEqual(0);
   });
 
+  it("deberia marcar una kata como terminada", () => {
+    const kata1 = new Kata("kata", "Ninguna", "Facil", "nueva descripcion");
+    catalogo.insertarKata(kata1);
+    catalogo.marcarTerminado("kata");
+    const katasPorEstado = catalogo.buscarPorEstado("No terminado");
+    expect(katasPorEstado.length).toEqual(0);
+  });
+
 });
