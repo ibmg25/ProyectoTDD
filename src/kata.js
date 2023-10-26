@@ -21,9 +21,11 @@ class Kata{
     getTitulo(){
       return this.titulo;
     }
+
     setCategoria(cat){
       this.categoria = cat;
     }
+
     getCategoria(){
       return this.categoria;
     }

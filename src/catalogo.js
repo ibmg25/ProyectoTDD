@@ -11,11 +11,11 @@ class Catalogo{
   insertarKata(kata){
     const validador = new Validador();
 
-    if (validador.validarTituloKata(kata)===true) {
+    if (validador.validarTituloKata(kata) && validador.validarCategoriaKata(kata)) {
       this.listakatas.push(kata);
       return kata.getTitulo()+" agregada al catálogo con éxito.";
     }
-    return "El título no es válido.";
+    return "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
   }
   printLista() {
 
