@@ -60,7 +60,7 @@ filtroCategoria.addEventListener("change", (event) => {
     
 });
 filtroEstado.addEventListener("change", (event) => {
-   
+   const estadoSeleccionado = event.target.value;
     
 });
 
