@@ -210,3 +210,28 @@ describe("Añadir una nueva kata al catalogo", () => {
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
 });
+
+
+
+
+
+
+
+describe("Buscar kata por estado", () => {
+
+  let catalogo;
+  beforeEach(() => {
+    catalogo = new Catalogo();
+  });
+
+  it("deberia devolver una kata con estado no terminado", () => {
+
+    const kata = new Kata();
+    catalogo.insertarKata(kata),
+    expect(catalogo.buscarPorEstado("No terminado")).toEqual([kata]);
+  });
+
+ 
+});
+
+
