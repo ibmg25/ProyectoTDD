@@ -162,4 +162,11 @@ describe("Añadir una nueva kata al catalogo", () => {
     const mensajeEsperado = "El título no es válido.";
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
+
+  it("deberia devolver un mensaje de error al insertar una nueva kata con caracteres de titulo invalido", () => {
+
+    const kata = new Kata("kat$", "sin categoria", "media", "nueva descripcion");
+    const mensajeEsperado = "El título no es válido.";
+    expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
+  });
 });

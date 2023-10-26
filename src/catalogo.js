@@ -10,7 +10,9 @@ class Catalogo{
     this.listakatas.push(kata);
     const longitudMinima = 3;
     const longitudMaxima = 100;
-    if (kata.getTitulo().length>longitudMinima && kata.getTitulo().length<longitudMaxima) {
+    const regex = /^[A-Za-z0-9\s]+$/;
+
+    if (kata.getTitulo().length>longitudMinima && kata.getTitulo().length<longitudMaxima && regex.test(kata.getTitulo())) {
       return kata.getTitulo()+" agregada al catálogo con éxito.";
     }
     return "El título no es válido.";
