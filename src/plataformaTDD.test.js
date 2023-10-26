@@ -218,7 +218,7 @@ describe("Añadir una nueva kata al catalogo", () => {
     it("deberia mostrar la kata de una lista buscar por su estado", () => {
       const kata1 = new Kata();
      catalogo.insertarKata(kata1);
-     expect(catalogo.buscarPorEstado("Terminado")).toEqual([kata1]);
+     expect(catalogo.buscarPorEstado("No Terminado")).toEqual([kata1]);
    });
   });
 });
