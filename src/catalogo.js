@@ -8,7 +8,7 @@ class Catalogo{
 
   insertarKata(kata){
     this.listakatas.push(kata);
-    return "Kata agregada al catálogo con éxito.";
+    return kata.getTitulo()+" agregada al catálogo con éxito.";
   }
   printLista() {
 
