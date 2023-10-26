@@ -35,7 +35,9 @@ class Kata{
       return this.descripcion;
     }
 
-
+    getEstado(){
+      return this.estado;
+    }
 
 }
 
