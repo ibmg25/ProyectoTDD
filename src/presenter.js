@@ -7,9 +7,15 @@ import Kata from "./kata.js";
 
 const catalogo = new Catalogo();
 const kata1 = new Kata();
-const kata2 = new Kata("Kata nueva", "sin categoria", "media", "nueva descripcion");
+const kata2 = new Kata("Kata 2", "sin categoria", "media", "nueva descripcion");
+const kata3 = new Kata("Kata 3", "sin categoria", "facil", "nueva descripcion");
+const kata4 = new Kata("Kata 4", "sin categoria", "dificil", "nueva descripcion");
+const kata5 = new Kata("Kata 5", "sin categoria", "media", "nueva descripcion");
 catalogo.insertarKata(kata1);
 catalogo.insertarKata(kata2);
+catalogo.insertarKata(kata3);
+catalogo.insertarKata(kata4);
+catalogo.insertarKata(kata5);
 div.innerHTML = catalogo.printLista();
 
  form.addEventListener("submit", (event) => {
