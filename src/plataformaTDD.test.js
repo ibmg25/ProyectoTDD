@@ -227,11 +227,18 @@ describe("Buscar kata por estado", () => {
   it("deberia devolver una kata con estado no terminado", () => {
 
     const kata = new Kata();
-    catalogo.insertarKata(kata),
+    catalogo.insertarKata(kata);
     expect(catalogo.buscarPorEstado("No terminado")).toEqual([kata]);
   });
 
- 
+  it("deberia devolver una lista de katas con estado no terminado", () => {
+
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2),
+    expect(catalogo.buscarPorEstado("No terminado")).toEqual([kata1, kata2]);
+  });
 });
 
 
