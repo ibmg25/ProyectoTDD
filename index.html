@@ -16,19 +16,33 @@
       <label for="Titulo">Titulo:</label>
       <input type="Titulo" id="Titulo" />
       <input type="submit" value="Buscar" id="buscar-button" />
-      <label for="Descripcion">Descripcion:</label>
-      <input type="Descripcion" id="Descripcion" />
+
+      <label for="dificultad">Dificultad:</label>
+      <select id="filtrar-dificultad-kata" name="dificultad" required>
+      <option value="Facil">Facil</option>
+      <option value="Media">Media</option>
+      <option value="Dificil">Dificil</option>
+      </select>
+
+      <label for="categoria">Categoria:</label>
+      <select id="filtrar-categoria-kata" name="categoria" required>
+      <option value="Ninguna">Ninguna</option>
+      <option value="Lógica y matematicas">Lógica y matematicas</option>
+      <option value="Validacion y formularios">Validacion y formularios</option>
+      </select>
+      <!-- <label for="Descripcion">Descripcion:</label>
+      <input type="text" id="Descripcion" />
       <input type="submit" value="Buscar" id="Descripcion-button" />
       <label for="Categoria">Categoria:</label>
       <input type="Categoria" id="Categoria" />
       <input type="submit" value="Buscar" id="Categoria-button" />
       <label for="Dificultad">Dificultad:</label>
       <input type="Dificultad" id="Dificultad" />
-      <input type="submit" value="Buscar" id="Dificultad-button" />
+      <input type="submit" value="Buscar" id="Dificultad-button" />-->
     </form> 
     <div id="resultado-div"></div>
 
-    <!-- <a class="boton-crear_kata" href="pages/crear_kata.html">+</a>  -->
+    <a class="boton-crear_kata" href="pages/crear_kata.html">+</a>  
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
