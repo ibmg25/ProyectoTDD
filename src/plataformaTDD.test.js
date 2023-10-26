@@ -155,4 +155,11 @@ describe("Añadir una nueva kata al catalogo", () => {
     const mensajeEsperado = "Kata nueva agregada al catálogo con éxito.";
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
+
+  it("deberia devolver un mensaje de error al insertar una nueva kata con una longitud de titulo invalido", () => {
+
+    const kata = new Kata("ka", "sin categoria", "media", "nueva descripcion");
+    const mensajeEsperado = "El título no es válido.";
+    expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
+  });
 });
