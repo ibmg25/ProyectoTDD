@@ -106,8 +106,8 @@ content: "Dificultad: ";
     color: white;
 }
 
-#crear_kata-form label  input[type="text"],
-select,
+#crear_kata-form input[type="text"],
+#crear_kata-form select,
 textarea {
   width: 90%;
   padding: 10px;
@@ -116,7 +116,7 @@ textarea {
   border-radius: 5px;
 }
 
-select{
+#crear_kata-form select{
     width: 95%;
 }
 
