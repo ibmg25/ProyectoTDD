@@ -65,6 +65,7 @@ filtroEstado.addEventListener("change", (event) => {
    catalogo.buscarPorEstado(estadoSeleccionado).forEach(kata => {
     catalogo2.insertarKata(kata)
 });
+div.innerHTML = catalogo2.printLista();
     
 });
 
