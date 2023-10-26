@@ -134,6 +134,20 @@ describe("Filtrar katas por dificultad", () => {
     const katasPorCategoria = catalogo.buscarPorCategoria("Dificil");
     expect(katasPorCategoria.length).toEqual(0);
   });
+
+  it("debería mostrar una lista con las katas de una categoría", () => {
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata();
+    kata1.setDificultad("Facil");
+    kata2.setDificultad("Dificil");
+    kata3.setDificultad("Facil");
+    catalogo.insertarKata(kata3);
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2);
+    const katasPorCategoria = catalogo.buscarPorDificultad("Facil");
+    expect(katasPorCategoria.length).toEqual(2);
+  });
   
   });
 });
