@@ -218,7 +218,14 @@ describe("Filtrar katas por estado", () => {
     catalogo = new Catalogo();
   });
 
-  it("deberia cargar a la lista katas no terminadas", () => {
+  it("deberia cargar a la lista vacia katas no terminadas", () => {
+    const katasPorEstado = catalogo.buscarPorEstado("No Terminado");
+    expect(katasPorEstado.length).toEqual(0);
+  });
+
+  it("deberia cargar a la lista con una kata no terminada", () => {
+    const kata1 = new Kata("kata", "Ninguna", "easy", "nueva descripcion");
+    catalogo.insertarKata(kata1);
     const katasPorEstado = catalogo.buscarPorEstado("No Terminado");
     expect(katasPorEstado.length).toEqual(0);
   });
