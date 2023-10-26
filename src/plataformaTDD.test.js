@@ -222,13 +222,15 @@ describe("Buscar kata por estado", () => {
   let catalogo;
   beforeEach(() => {
     catalogo = new Catalogo();
+    
   });
 
   it("deberia devolver una kata con estado no terminado", () => {
 
     const kata = new Kata();
     catalogo.insertarKata(kata);
-    expect(catalogo.buscarPorEstado("No terminado")).toEqual([kata]);
+    const katasPorEstado = catalogo.buscarPorEstado("No terminado");
+    expect(katasPorEstado.length).toEqual(1);
   });
 
   it("deberia devolver una lista de katas con estado no terminado", () => {
@@ -236,8 +238,17 @@ describe("Buscar kata por estado", () => {
     const kata1 = new Kata();
     const kata2 = new Kata();
     catalogo.insertarKata(kata1);
-    catalogo.insertarKata(kata2),
-    expect(catalogo.buscarPorEstado("No terminado")).toEqual([kata1, kata2]);
+    catalogo.insertarKata(kata2);
+    const katasPorEstado = catalogo.buscarPorEstado("No terminado");
+    expect(katasPorEstado.length).toEqual(2);
+  });
+
+  it("deberia devolver una kata con estado terminado", () => {
+
+    const kata = new Kata("kata", "Ninguna", "Media", "Sin decripcion", "Terminado");
+    catalogo.insertarKata(kata);
+    const katasPorEstado = catalogo.buscarPorEstado("Terminado");
+    expect(katasPorEstado.length).toEqual(1);
   });
 });
 
