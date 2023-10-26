@@ -209,4 +209,24 @@ describe("Añadir una nueva kata al catalogo", () => {
     const mensajeEsperado = "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
+  describe("ExamenTests", () => {
+
+    let catalogo;
+    beforeEach(() => {
+      catalogo = new Catalogo();
+    });
+  
+    it("deberia mostrar una lista de katas vacia", () => {
+  
+      expect(catalogo.printLista()).toEqual("<div class='catalog-message'>Sin katas aún. ¡Sé el primero en crear una!</div>");
+    });
+  
+    it("deberia mostrar una lista con una kata", () => {
+  
+      const kata1 = new Kata();
+      catalogo.insertarKata(kata1)
+      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+      expect(catalogo.printLista()).toEqual(kataEsperada);
+    });
+  });
 });
