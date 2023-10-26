@@ -109,13 +109,26 @@ describe("Filtrar katas por dificultad", () => {
     const kata2 = new Kata();
     const kata3 = new Kata();
     kata1.setCategoria("Lógica y matematicas");
-    kata2.setCategoria("Validacion y formuñarios");
+    kata2.setCategoria("Validacion y formularios");
     kata3.setCategoria("Lógica y matematicas");
     catalogo.insertarKata(kata3);
     catalogo.insertarKata(kata1);
     catalogo.insertarKata(kata2);
     const katasPorCategoria = catalogo.buscarPorCategoria("Lógica y matematicas");
     expect(katasPorCategoria.length).toEqual(2);
+  });
+  it("debería mostrar una lista con las katas de otra categoría", () => {
+    const kata1 = new Kata();
+    const kata2 = new Kata();
+    const kata3 = new Kata();
+    kata1.setCategoria("Lógica y matematicas");
+    kata2.setCategoria("Validacion y formularios");
+    kata3.setCategoria("Lógica y matematicas");
+    catalogo.insertarKata(kata3);
+    catalogo.insertarKata(kata1);
+    catalogo.insertarKata(kata2);
+    const katasPorCategoria = catalogo.buscarPorCategoria("Validacion y formularios");
+    expect(katasPorCategoria.length).toEqual(1);
   });
 
   
