@@ -8,15 +8,15 @@ const div = document.querySelector("#resultado-div");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const titulo = Titulo.value;
+  //const secondNumber = Number.parseInt(second.value);
 
- div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+ //div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
  });
 
 const catalogo = new Catalogo();
 const kata1 = new Kata();
-const kata2 = new Kata();
+const kata2 = new Kata("Kata2", "sin categoria", "Dificil", "nueva descripcion");
 catalogo.insertarKata(kata1);
 catalogo.insertarKata(kata2);
 
