@@ -9,7 +9,7 @@ class Kata{
   }
 
     printKata(){
-      return "<div class='kata'><div class='title-kata'>" + this.titulo + "</div><div class='category-kata'>"+ this.categoria + "</div><div class='difficulty-kata'>"+ this.dificultad + "</div><div class='description-kata'>"+ this.descripcion + "</div><div class='status-kata'>"+ this.estado + "</div></div>";
+      return "<div class='kata'><div class='title-kata'>" + this.titulo + "</div><div class='category-kata'>"+ this.categoria + "</div><div class='difficulty-kata'>"+ this.dificultad + "</div><div class='description-kata'>"+ this.descripcion + "</div><div class='estado-kata'>"+ this.estado + "</div></div>";
     }
 
     setDificultad(dif){
