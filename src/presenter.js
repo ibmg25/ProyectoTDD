@@ -18,8 +18,7 @@ div.innerHTML = catalogo.printLista();
    const titulo = toString(Titulo.value);
    const catalogo2 = new Catalogo();
    const kataBuscada = new Kata();
-   catalogo2.insertarKata(catalogo.buscarPorTitulo("Kata"));
-   div.innerHTML = catalogo2.printLista();
+   div.innerHTML = catalogo.buscarPorTitulo("Kata").printLista();
  });
 
 

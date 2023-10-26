@@ -27,7 +27,9 @@ class Catalogo{
   }
   buscarPorTitulo(tit)
   {  
-    return this.listakatas.filter(kata => kata.getTitulo() === tit ); 
+     const k = this.listakatas.find(kata => kata.getTitulo() === tit ); 
+     return k;
+
   }
   buscarPorCategoria(categoria) {
     return this.listakatas.filter(kata => kata.getCategoria() === categoria); 
