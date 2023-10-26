@@ -16,7 +16,12 @@ class Validador{
     validarCategoriaKata(kata){
         let valido = false;
         const categorias = [
-            "Ninguna"
+            "Ninguna",
+            "Lógica y matematicas",
+            "Validacion y formularios",
+            "Lógica y matematicas"
+
+
         ];
         if (categorias.includes(kata.getCategoria())) {
             valido = true;
