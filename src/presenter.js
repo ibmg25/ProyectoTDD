@@ -22,8 +22,9 @@ div.innerHTML = catalogo.printLista();
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
-const filtroDificultad = document.querySelector("#filtrar-dificultad-kata")
-const filtroCategoria = document.querySelector("#filtrar-categoria-kata")
+const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
+const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
+const filtroEstado = document.querySelector("#filtrar-estado-kata");
 
 formBuscarTitulo.addEventListener("submit", (event) => {
    event.preventDefault();
@@ -52,6 +53,17 @@ filtroCategoria.addEventListener("change", (event) => {
     const categoriaSeleccionada = event.target.value;
     const catalogo2 = new Catalogo();
     catalogo.buscarPorCategoria(categoriaSeleccionada).forEach(kata => {
+        catalogo2.insertarKata(kata)
+    });
+
+    div.innerHTML = catalogo2.printLista();
+    
+});
+
+filtroEstado.addEventListener("change", (event) => {
+    const estadoSeleccionado = event.target.value;
+    const catalogo2 = new Catalogo();
+    catalogo.buscarPorEstado(estadoSeleccionado).forEach(kata => {
         catalogo2.insertarKata(kata)
     });
 
