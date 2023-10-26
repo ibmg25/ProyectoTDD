@@ -5,6 +5,7 @@ class Kata{
     this.categoria = categoria;
     this.dificultad = dificultad;
     this.descripcion = descripcion;
+    this.estado = "No terminado";
   }
 
     printKata(){
