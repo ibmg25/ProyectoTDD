@@ -25,6 +25,8 @@ const formBuscarTitulo = document.querySelector("#buscar-form");
 const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
 const filtroEstado = document.querySelector("#filtrar-estado-kata");
+const formMarcar = document.querySelector("#marcar-form");
+const kataAMarcar = document.querySelector("#kataTerminada");
 
 formBuscarTitulo.addEventListener("submit", (event) => {
    event.preventDefault();
