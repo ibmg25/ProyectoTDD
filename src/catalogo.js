@@ -27,11 +27,7 @@ class Catalogo{
   }
   buscarPorTitulo(tit)
   {  
-    for (const kata of this.listakatas) {
-      if (kata.getTitulo() == tit) {
-        return kata.printKata();
-        }
-    }
+    return this.listakatas.filter(kata => kata.getTitulo() === tit ); 
   }
   buscarPorCategoria(categoria) {
     return this.listakatas.filter(kata => kata.getCategoria() === categoria); 

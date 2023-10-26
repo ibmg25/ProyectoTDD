@@ -97,8 +97,7 @@ describe("Filtrar katas por dificultad", () => {
     it("deberia mostrar la kata de una lista segun el nombre", () => {
       const kata1 = new Kata();
      catalogo.insertarKata(kata1);
-     const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
-     expect(catalogo.buscarPorTitulo("Kata")).toEqual(kataEsperada);
+     expect(catalogo.buscarPorTitulo("Kata")).toEqual([kata1]);
    });
    it("debería mostrar una lista vacía si no hay katas de una categoría", () => {
     const katasPorCategoria = catalogo.buscarPorCategoria("Algoritmos");
