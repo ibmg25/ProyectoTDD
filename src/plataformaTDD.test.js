@@ -148,6 +148,13 @@ describe("Filtrar katas por dificultad", () => {
     const katasPorCategoria = catalogo.buscarPorDificultad("Facil");
     expect(katasPorCategoria.length).toEqual(2);
   });
+
+  it("deberia mostrar el estado de la cata", () => {
+    const kata1 = new Kata();
+   catalogo.insertarKata(kata1)
+   const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+   expect(kata1.getEstado()).toEqual("Kata");
+ });
   
   });
 });

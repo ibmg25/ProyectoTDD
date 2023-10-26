@@ -1,10 +1,11 @@
 class Kata{
 
-  constructor(titulo = "Kata", categoria = "Ninguna", dificultad = "Media", descripcion = "Descripcion vacia"){
+  constructor(titulo = "Kata", categoria = "Ninguna", dificultad = "Media", descripcion = "Descripcion vacia", estado = "No terminado"){
     this.titulo = titulo;
     this.categoria = categoria;
     this.dificultad = dificultad;
     this.descripcion = descripcion;
+    this.estado = estado;
   }
 
     printKata(){
@@ -33,6 +34,7 @@ class Kata{
     getDescripcion(){
       return this.descripcion;
     }
+    
 }
 
 export default Kata;
