@@ -100,6 +100,10 @@ describe("Filtrar katas por dificultad", () => {
      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
      expect(catalogo.buscarPorTitulo("Kata")).toEqual(kataEsperada);
    });
+   it("debería mostrar una lista vacía si no hay katas de una categoría", () => {
+    const katasPorCategoria = catalogo.buscarPorCategoria("Algoritmos");
+    expect(katasPorCategoria.length).toEqual(0);
+  });
 
   
   });

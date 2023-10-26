@@ -33,6 +33,9 @@ class Catalogo{
         }
     }
   }
+  buscarPorCategoria(categoria) {
+    return this.listakatas.filter(kata => kata.getCategoria() === categoria); 
+  }
 }
 
 export default Catalogo;
