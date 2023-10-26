@@ -106,8 +106,8 @@ content: "Dificultad: ";
     color: white;
 }
 
-input[type="text"],
-select,
+#crear_kata-form input[type="text"],
+#crear_kata-form select,
 textarea {
   width: 90%;
   padding: 10px;
@@ -116,7 +116,7 @@ textarea {
   border-radius: 5px;
 }
 
-select{
+#crear_kata-form select{
     width: 95%;
 }
 
@@ -134,5 +134,18 @@ select{
     background-color:black;
     color: #03FA6E;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+ #mensaje-div {
+    background-color: #171810; 
+    color: #03FA6E; 
+    padding: 10px; 
+    margin-top: 20px; 
+    text-align: center; 
+    display: none; 
+    position: static;
+    z-index: 1;
+    font-family: 'Montserrat', sans-serif;
+    
 }
 
