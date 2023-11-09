@@ -32,6 +32,10 @@ class Catalogo{
     return lista.join(' ');
 
   }
+
+  getLista(){
+    return this.listakatas;
+  }
   
   buscarPorTitulo(tit)
   {  
