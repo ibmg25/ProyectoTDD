@@ -32,6 +32,7 @@ class Catalogo{
     return lista.join(' ');
 
   }
+  
   buscarPorTitulo(tit)
   {  
      const k = this.listakatas.find(kata => kata.getTitulo() === tit ); 
