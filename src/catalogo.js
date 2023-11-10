@@ -18,19 +18,6 @@ class Catalogo{
     return "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
   }
 
-  printLista() {
-    let lista = [];
-    if (this.listakatas.length===0) {
-      lista.push("<div class='catalog-message'>Sin katas aún. ¡Sé el primero en crear una!</div>");
-    }
-    else{
-      this.listakatas.forEach(kata => {
-        lista.push(kata.printKata());
-      });
-    }
-    return lista.join(' ');
-  }
-
   getLista(){
     return this.listakatas;
   }
