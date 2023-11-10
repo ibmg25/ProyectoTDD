@@ -17,9 +17,9 @@ class Catalogo{
     }
     return "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
   }
-  printLista() {
 
-    const lista = [];
+  printLista() {
+    let lista = [];
     if (this.listakatas.length===0) {
       lista.push("<div class='catalog-message'>Sin katas aún. ¡Sé el primero en crear una!</div>");
     }
@@ -28,9 +28,7 @@ class Catalogo{
         lista.push(kata.printKata());
       });
     }
-    
     return lista.join(' ');
-
   }
 
   getLista(){

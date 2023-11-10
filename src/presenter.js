@@ -18,12 +18,19 @@ catalogo.insertarKata(kata4);
 catalogo.insertarKata(kata5);
 catalogo.insertarKata(kata6);
 
-div.innerHTML = catalogo.printLista();
+const lista = catalogo.getLista();
+let listaAMostrar = [];
+for (i = 0; i < catalogo.getLista().length; i++){
+    let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+    listaAMostrar.push(kata);
+}
+
+div.innerHTML = listaAMostrar.join(' ');
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
-const filtroDificultad = document.querySelector("#filtrar-dificultad-kata")
-const filtroCategoria = document.querySelector("#filtrar-categoria-kata")
+const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
+const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
 
 formBuscarTitulo.addEventListener("submit", (event) => {
    event.preventDefault();
@@ -34,6 +41,7 @@ formBuscarTitulo.addEventListener("submit", (event) => {
    if (kataBuscada != null) {
     catalogo2.insertarKata(kataBuscada);
    }
+   
    div.innerHTML = catalogo2.printLista();
 });
 
