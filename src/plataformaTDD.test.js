@@ -73,8 +73,7 @@ describe("Filtrar katas por dificultad", () => {
       catalogo.insertarKata(kata3);
     if (kata4.getDificultad() == "Facil")
       catalogo.insertarKata(kata4);
-    const listaEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div> <div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Facil</div><div class='description-kata'>Descripcion vacia</div></div>";
-    expect(catalogo.printLista()).toEqual(listaEsperada);
+    expect(catalogo.getLista()).toEqual([kata1, kata4]);
   });
 
   describe("Buscar Katas por parametro", () => {
