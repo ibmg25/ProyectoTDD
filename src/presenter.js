@@ -33,16 +33,22 @@ const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
 
 formBuscarTitulo.addEventListener("submit", (event) => {
-   event.preventDefault();
+    event.preventDefault();
 
-   const titulo = tituloABuscar.value;
-   const catalogo2 = new Catalogo();
-   const kataBuscada=catalogo.buscarPorTitulo(titulo);
-   if (kataBuscada != null) {
-    catalogo2.insertarKata(kataBuscada);
-   }
-   
-   div.innerHTML = catalogo2.printLista();
+    const titulo = tituloABuscar.value;
+    const catalogo2 = new Catalogo();
+    const kataBuscada=catalogo.buscarPorTitulo(titulo);
+    if (kataBuscada != null) {
+        catalogo2.insertarKata(kataBuscada);
+    }
+    
+    const lista = catalogo2.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogo2.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+        listaAMostrar.push(kata);
+    }
+    div.innerHTML = listaAMostrar.join(' ');
 });
 
 filtroDificultad.addEventListener("change", (event) => {
@@ -52,7 +58,13 @@ filtroDificultad.addEventListener("change", (event) => {
         catalogo2.insertarKata(kata)
     });
 
-    div.innerHTML = catalogo2.printLista();
+    const lista = catalogo2.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogo2.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+        listaAMostrar.push(kata);
+    }
+    div.innerHTML = listaAMostrar.join(' ');
     
 });
 
@@ -63,7 +75,13 @@ filtroCategoria.addEventListener("change", (event) => {
         catalogo2.insertarKata(kata)
     });
 
-    div.innerHTML = catalogo2.printLista();
+    const lista = catalogo2.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogo2.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+        listaAMostrar.push(kata);
+    }
+    div.innerHTML = listaAMostrar.join(' ');
     
 });
 
