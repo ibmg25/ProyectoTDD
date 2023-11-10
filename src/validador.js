@@ -1,7 +1,5 @@
 class Validador{
 
-    
-
     validarTituloKata(kata){
         let valido = false;
         const longitudMinima = 3;

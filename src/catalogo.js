@@ -7,7 +7,6 @@ class Catalogo{
     this.listakatas = []; 
   }
 
-
   insertarKata(kata){
     const validador = new Validador();
 
