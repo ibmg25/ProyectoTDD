@@ -83,21 +83,23 @@ describe("Filtrar katas por dificultad", () => {
       catalogo = new Catalogo();
     });
   
-    it("deberia mostrar el titulo de la cata", () => {
-       const kata1 = new Kata();
-      catalogo.insertarKata(kata1)
-      const kataEsperada = "<div class='kata'><div class='title-kata'>Kata</div><div class='category-kata'>Ninguna</div><div class='difficulty-kata'>Media</div><div class='description-kata'>Descripcion vacia</div></div>";
+    it("deberia mostrar el titulo de la kata", () => {
+      const kata1 = new Kata();
+      catalogo.insertarKata(kata1);
       expect(kata1.getTitulo()).toEqual("Kata");
     });
+
     it("deberia mostrar la kata de una lista segun el nombre", () => {
       const kata1 = new Kata();
      catalogo.insertarKata(kata1);
      expect(catalogo.buscarPorTitulo("Kata")).toEqual(kata1);
    });
+
    it("debería mostrar una lista vacía si no hay katas de una categoría", () => {
     const katasPorCategoria = catalogo.buscarPorCategoria("Algoritmos");
     expect(katasPorCategoria.length).toEqual(0);
   });
+
   it("debería mostrar una lista con las katas de una categoría", () => {
     const kata1 = new Kata();
     const kata2 = new Kata();
@@ -111,6 +113,7 @@ describe("Filtrar katas por dificultad", () => {
     const katasPorCategoria = catalogo.buscarPorCategoria("Lógica y matematicas");
     expect(katasPorCategoria.length).toEqual(2);
   });
+  
   it("debería mostrar una lista con las katas de otra categoría", () => {
     const kata1 = new Kata();
     const kata2 = new Kata();
