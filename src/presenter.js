@@ -102,5 +102,3 @@ filtroCategoria.addEventListener("change", (event) => {
 
 
 
-
-
