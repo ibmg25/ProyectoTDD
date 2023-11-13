@@ -68,17 +68,29 @@ formBuscarTitulo.addEventListener("submit", (event) => {
 filtroDificultad.addEventListener("change", (event) => {
     const dificultadSeleccionada = event.target.value;
     const catalogo2 = new Catalogo();
-    catalogo.buscarPorDificultad(dificultadSeleccionada).forEach(kata => {
-        catalogo2.insertarKata(kata)
-    });
 
-    const lista = catalogo2.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo2.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
+    if (dificultadSeleccionada == "Ninguna"){
+        const lista = catalogo.getLista();
+        let listaAMostrar = [];
+        for (i = 0; i < catalogo.getLista().length; i++){
+            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+            listaAMostrar.push(kata);
+        }
+        div.innerHTML = listaAMostrar.join(' ');
     }
-    div.innerHTML = listaAMostrar.join(' ');
+    else{
+        catalogo.buscarPorDificultad(dificultadSeleccionada).forEach(kata => {
+            catalogo2.insertarKata(kata)
+        });
+
+        const lista = catalogo2.getLista();
+        let listaAMostrar = [];
+        for (i = 0; i < catalogo2.getLista().length; i++){
+            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+            listaAMostrar.push(kata);
+        }
+        div.innerHTML = listaAMostrar.join(' ');
+    }
     
 });
 
