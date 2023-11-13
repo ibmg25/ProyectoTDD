@@ -18,6 +18,13 @@ catalogo.insertarKata(kata4);
 catalogo.insertarKata(kata5);
 catalogo.insertarKata(kata6);
 
+const tituloKata = document.querySelector("#titulo-kata");
+const categoriaKata = document.querySelector("#categoria-kata");
+const dificultadKata = document.querySelector("#dificultad-kata");
+const descripcionKata = document.querySelector("#descripcion-kata");
+const formCrearKata = document.querySelector("#crear_kata-form");
+const mensaje = document.querySelector("#mensaje-div");
+
 const lista = catalogo.getLista();
 let listaAMostrar = [];
 for (i = 0; i < catalogo.getLista().length; i++){
@@ -29,8 +36,20 @@ div.innerHTML = listaAMostrar.join(' ');
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
+const formBorrarFiltros = document.querySelector("#eliminarFiltros-form");
 const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
+
+formBorrarFiltros.addEventListener("submit", (event) => {
+    const lista = catalogo.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogo.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+        listaAMostrar.push(kata);
+    }
+
+    div.innerHTML = listaAMostrar.join(' ');
+})
 
 formBuscarTitulo.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -85,7 +104,20 @@ filtroCategoria.addEventListener("change", (event) => {
     
 });
 
+formCrearKata.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const titulo = tituloKata.value;
+    const categoria = categoriaKata.value;
+    const dificultad = dificultadKata.value;
+    const descripcion = descripcionKata.value;
+
+    const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    
+    
+    mensaje.textContent = catalogo.insertarKata(kata);
+    mensaje.style.display = "block";
+});
 
 
 
