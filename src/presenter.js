@@ -1,9 +1,11 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
 
-const div = document.querySelector("#resultado-div");
+let div = document.querySelector("#resultado-div");
 
-const catalogo = new Catalogo();
+let catalogo = new Catalogo();
+
+export {catalogo};
 
 const kata1 = new Kata();
 const kata2 = new Kata("Kata 2", "Ninguna", "Media", "nueva descripcion");
@@ -17,13 +19,6 @@ catalogo.insertarKata(kata3);
 catalogo.insertarKata(kata4);
 catalogo.insertarKata(kata5);
 catalogo.insertarKata(kata6);
-
-const tituloKata = document.querySelector("#titulo-kata");
-const categoriaKata = document.querySelector("#categoria-kata");
-const dificultadKata = document.querySelector("#dificultad-kata");
-const descripcionKata = document.querySelector("#descripcion-kata");
-const formCrearKata = document.querySelector("#crear_kata-form");
-const mensaje = document.querySelector("#mensaje-div");
 
 const lista = catalogo.getLista();
 let listaAMostrar = [];
@@ -102,21 +97,6 @@ filtroCategoria.addEventListener("change", (event) => {
     }
     div.innerHTML = listaAMostrar.join(' ');
     
-});
-
-formCrearKata.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const titulo = tituloKata.value;
-    const categoria = categoriaKata.value;
-    const dificultad = dificultadKata.value;
-    const descripcion = descripcionKata.value;
-
-    const kata = new Kata(titulo, categoria, dificultad, descripcion);
-    
-    
-    mensaje.textContent = catalogo.insertarKata(kata);
-    mensaje.style.display = "block";
 });
 
 

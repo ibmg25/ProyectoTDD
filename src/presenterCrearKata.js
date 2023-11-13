@@ -1,5 +1,6 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
+//import {catalogo} from "./presenter.js";
 
 const tituloKata = document.querySelector("#titulo-kata");
 const categoriaKata = document.querySelector("#categoria-kata");
@@ -8,8 +9,7 @@ const descripcionKata = document.querySelector("#descripcion-kata");
 const formCrearKata = document.querySelector("#crear_kata-form");
 const mensaje = document.querySelector("#mensaje-div");
 
-
-const catalogo = new Catalogo();
+let catalogo = new Catalogo();
 
 formCrearKata.addEventListener("submit", (event) => {
     event.preventDefault();
