@@ -14,6 +14,11 @@ class Kata{
     getDificultad(){
       return this.dificultad;
     }
+
+    setTitulo(tit){
+      this.titulo = tit;
+    }
+
     getTitulo(){
       return this.titulo;
     }

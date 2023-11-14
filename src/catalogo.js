@@ -35,8 +35,10 @@ class Catalogo{
     return this.listakatas.filter(kata => kata.getDificultad() === dif); 
   }
 
-  editarKata(kataAEditar){
-    return this.buscarPorTitulo(kataAEditar);
+  editarKata(kataAEditar, nuevoTitulo = this.buscarPorTitulo(kataAEditar).getTitulo()){
+    const kataEditada = this.buscarPorTitulo(kataAEditar);
+    kataEditada.setTitulo(nuevoTitulo);
+    return kataEditada;
   }
 }
 

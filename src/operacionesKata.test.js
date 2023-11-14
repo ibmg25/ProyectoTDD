@@ -73,6 +73,13 @@ describe("Editar una kata del catalogo", () => {
       expect(catalogo.editarKata("kataAEditar")).toEqual(kata);
     });
   
-    
+    it("deberia devolver la kata que quiero editar con el nuevo titulo editado", () => {
+  
+        const kata = new Kata("kataAEditar");
+        const kataEsperada = new Kata("nuevoTitulo");
+        catalogo.insertarKata(kata)
+        expect(catalogo.editarKata("kataAEditar", "nuevoTitulo")).toEqual(kataEsperada);
+    });
+
 });
 
