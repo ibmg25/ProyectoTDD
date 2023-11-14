@@ -11,44 +11,63 @@
   </head>
 
   <body>
-    <h1>Catálogo</h1>
-    <form id="buscar-form">
-      <label for="titulo">Titulo:</label>
-      <input type="titulo" id="titulo" />
-      <input type="submit" value="Buscar" id="buscar-button" />
+    <div id="divCatalogo">
+      <h1>Catálogo</h1>
+      <form id="buscar-form">
+        <label for="titulo">Titulo:</label>
+        <input type="titulo" id="titulo" />
+        <input type="submit" value="Buscar" id="buscar-button" />
 
-      <label for="dificultad">Dificultad:</label>
-      <select id="filtrar-dificultad-kata" name="dificultad" required>
-      <option value="Todas">Todas</option>
-      <option value="Facil">Facil</option>
-      <option value="Media">Media</option>
-      <option value="Dificil">Dificil</option>
-      </select>
+        <label for="dificultad">Dificultad:</label>
+        <select id="filtrar-dificultad-kata" name="dificultad" required>
+        <option value="Todas">Todas</option>
+        <option value="Facil">Facil</option>
+        <option value="Media">Media</option>
+        <option value="Dificil">Dificil</option>
+        </select>
 
-      <label for="categoria">Categoria:</label>
-      <select id="filtrar-categoria-kata" name="categoria" required>
-      <option value="Todas">Todas</option>
-      <option value="Sin Asignar">Sin Asignar</option>
-      <option value="Lógica y matematicas">Lógica y matematicas</option>
-      <option value="Validacion y formularios">Validacion y formularios</option>
-      </select>
-      <!-- <label for="Descripcion">Descripcion:</label>
-      <input type="text" id="Descripcion" />
-      <input type="submit" value="Buscar" id="Descripcion-button" />
-      <label for="Categoria">Categoria:</label>
-      <input type="Categoria" id="Categoria" />
-      <input type="submit" value="Buscar" id="Categoria-button" />
-      <label for="Dificultad">Dificultad:</label>
-      <input type="Dificultad" id="Dificultad" />
-      <input type="submit" value="Buscar" id="Dificultad-button" />-->
-    </form> 
-    <form id="eliminarFiltros-form">
-      <input type="submit" value="Borrar Filtros" id="filtros-button" />
-    </form>
-    <div id="resultado-div"></div>
+        <label for="categoria">Categoria:</label>
+        <select id="filtrar-categoria-kata" name="categoria" required>
+        <option value="Todas">Todas</option>
+        <option value="Sin Asignar">Sin Asignar</option>
+        <option value="Lógica y matematicas">Lógica y matematicas</option>
+        <option value="Validacion y formularios">Validacion y formularios</option>
+        </select>
+      </form> 
+      <form id="eliminarFiltros-form">
+        <input type="submit" value="Borrar Filtros" id="filtros-button" />
+      </form>
+      <div id="resultado-div"></div>
+    </div>
+    <a href="#" class="boton-crear_kata" id="nuevaKata">+</a>  
+    <div id="divCrear" style="display: none;">
+      <h1>Insertar Nueva Kata</h1>
+      <form id="crear_kata-form">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo-kata" name="titulo" required>
+        <br>
 
-    <a class="boton-crear_kata" href="pages/crear_kata.html">+</a>  
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria-kata" name="categoria" required>
+        <br>
 
+        <label for="dificultad">Dificultad:</label>
+        <select id="dificultad-kata" name="dificultad" required>
+        <option value="Facil">Facil</option>
+        <option value="Intermedia">Media</option>
+        <option value="Dificil">Dificil</option>
+        </select>
+        <br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion-kata" name="descripcion" rows="4" cols="50" required></textarea>
+        <br>
+
+        <input type="submit" value="Insertar Kata">
+      </form>
+      <div id="mensaje2-div"></div>
+      <a class="boton-volver" href="./index.html">Volver</a>  
+    </div>
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

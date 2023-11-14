@@ -124,6 +124,29 @@ filtroCategoria.addEventListener("change", (event) => {
     
 });
 
+const divCat = document.querySelector("#divCatalogo");
+const divCrear = document.querySelector("#divCrear");
 
+document.getElementById("nuevaKata").onclick = function() {
+    divCat.style.display = "none";
+    divCrear.style.display = "block";
+};
 
+const tituloKata = document.querySelector("#titulo-kata");
+const categoriaKata = document.querySelector("#categoria-kata");
+const dificultadKata = document.querySelector("#dificultad-kata");
+const descripcionKata = document.querySelector("#descripcion-kata");
+const formCrearKata = document.querySelector("#crear_kata-form");
+const mensaje = document.querySelector("#mensaje2-div");
 
+formCrearKata.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const titulo = tituloKata.value;
+    const categoria = categoriaKata.value;
+    const dificultad = dificultadKata.value;
+    const descripcion = descripcionKata.value;
+    const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    
+    mensaje.textContent = catalogo.insertarKata(kata);
+    mensaje.style.display = "block";
+});
