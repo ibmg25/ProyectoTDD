@@ -8,10 +8,10 @@ let catalogo = new Catalogo();
 export {catalogo};
 
 const kata1 = new Kata();
-const kata2 = new Kata("Kata 2", "Ninguna", "Media", "nueva descripcion");
-const kata3 = new Kata("Kata 3", "Ninguna", "Facil", "nueva descripcion");
-const kata4 = new Kata("Kata 4", "Ninguna", "Dificil", "nueva descripcion");
-const kata5 = new Kata("Kata 5", "Ninguna", "Media", "nueva descripcion");
+const kata2 = new Kata("Kata 2", "Validacion y formularios", "Media", "nueva descripcion");
+const kata3 = new Kata("Kata 3", "Validacion y formularios", "Facil", "nueva descripcion");
+const kata4 = new Kata("Kata 4", "Validacion y formularios", "Dificil", "nueva descripcion");
+const kata5 = new Kata("Kata 5", "Lógica y matematicas", "Media", "nueva descripcion");
 const kata6 = new Kata("Kata 6", "Lógica y matematicas", "Media", "nueva descripcion");
 catalogo.insertarKata(kata1);
 catalogo.insertarKata(kata2);
