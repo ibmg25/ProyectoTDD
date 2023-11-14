@@ -12,7 +12,7 @@ describe("Mostrar lista de katas", () => {
   it("deberia mostrar la kata buscada por nombre", () => {
     cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
 
-    cy.get("#resultado-div")
+    //cy.get("#resultado-div")
     cy.get("#titulo").type("Kata 2");
     cy.get("#buscar-button").click() // Busca elementos con la clase .kata dentro del div
     cy.should("have.length",1 ); // Asegura que haya al menos un elemento .kata dentro del div
