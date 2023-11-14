@@ -69,7 +69,7 @@ filtroDificultad.addEventListener("change", (event) => {
     const dificultadSeleccionada = event.target.value;
     const catalogo2 = new Catalogo();
 
-    if (dificultadSeleccionada == "Ninguna"){
+    if (dificultadSeleccionada == "Todas"){
         const lista = catalogo.getLista();
         let listaAMostrar = [];
         for (i = 0; i < catalogo.getLista().length; i++){

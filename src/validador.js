@@ -14,6 +14,7 @@ class Validador{
     validarCategoriaKata(kata){
         let valido = false;
         const categorias = [
+            "Sin Asignar",
             "Ninguna",
             "Lógica y matematicas",
             "Validacion y formularios",
