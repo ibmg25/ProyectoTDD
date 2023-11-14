@@ -167,7 +167,7 @@ describe("Añadir una nueva kata al catalogo", () => {
 
   it("deberia devolver un mensaje de confirmacion exitoso al insertar una nueva kata al catalogo", () => {
 
-    const kata = new Kata("Kata nueva", "Ninguna", "Media", "nueva descripcion");
+    const kata = new Kata("Kata nueva", "Sin Asignar", "Media", "nueva descripcion");
     const mensajeEsperado = "Kata nueva agregada al catálogo con éxito.";
     expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
   });
