@@ -97,17 +97,30 @@ filtroDificultad.addEventListener("change", (event) => {
 filtroCategoria.addEventListener("change", (event) => {
     const categoriaSeleccionada = event.target.value;
     const catalogo2 = new Catalogo();
-    catalogo.buscarPorCategoria(categoriaSeleccionada).forEach(kata => {
-        catalogo2.insertarKata(kata)
-    });
 
-    const lista = catalogo2.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo2.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
+    if (categoriaSeleccionada == "Todas"){
+        const lista = catalogo.getLista();
+        let listaAMostrar = [];
+        for (i = 0; i < catalogo.getLista().length; i++){
+            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+            listaAMostrar.push(kata);
+        }
+        div.innerHTML = listaAMostrar.join(' ');
     }
-    div.innerHTML = listaAMostrar.join(' ');
+    else{
+
+        catalogo.buscarPorCategoria(categoriaSeleccionada).forEach(kata => {
+            catalogo2.insertarKata(kata)
+        });
+
+        const lista = catalogo2.getLista();
+        let listaAMostrar = [];
+        for (i = 0; i < catalogo2.getLista().length; i++){
+            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+            listaAMostrar.push(kata);
+        }
+        div.innerHTML = listaAMostrar.join(' ');
+    }
     
 });
 
