@@ -149,4 +149,17 @@ formCrearKata.addEventListener("submit", (event) => {
     
     mensaje.textContent = catalogo.insertarKata(kata);
     mensaje.style.display = "block";
+
+    divCat.style.display = "block";
+    divCrear.style.display = "none";
+
+    const lista = catalogo.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogo.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
+        listaAMostrar.push(kata);
+    }
+
+    div.innerHTML = listaAMostrar.join(' ');
+
 });
