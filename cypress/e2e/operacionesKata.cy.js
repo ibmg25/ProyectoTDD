@@ -32,7 +32,16 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#mensaje2-div").should("contain", "Kata editada con éxito.");
     });
 
-    
+    it("deberia mostrar la kata con la nueva informacion en el catalogo", () => {
+        cy.visit("/");
+        cy.get('.boton-editar').eq(0).click();
+        cy.get("#titulo-kata-editar").clear().type("NuevoTitulo");
+        cy.get("#categoria-kata-editar").clear().type("Validacion y formularios");
+        cy.get("#dificultad-kata-editar").select("Facil");
+        cy.get("#descripcion-kata-editar").clear().type("Nueva descripcion");
+        cy.get("input[type='submit']").eq(3).click();
+        cy.get(".title-kata").eq(0).should("contain", "NuevoTitulo");
+    });
 });
 
   

@@ -167,6 +167,7 @@ formCrearKata.addEventListener("submit", (event) => {
 
 
 /////////// Editar kata
+
 const divEditar = document.querySelector("#divEditar");
 const formEditarKata = document.querySelector("#editar_kata-form");
 const botonesEditar = document.getElementsByClassName("boton-editar");
@@ -189,14 +190,17 @@ for (var i = 0; i < botonesEditar.length; i++) {
 
 
 
-
+const tituloKataEditar = document.querySelector("#titulo-kata-editar");
+const categoriaKataEditar = document.querySelector("#categoria-kata-editar");
+const dificultadKataEditar = document.querySelector("#dificultad-kata-editar");
+const descripcionKataEditar = document.querySelector("#descripcion-kata-editar");
 
 formEditarKata.addEventListener("submit", (event) => {
     event.preventDefault(); 
-    const titulo = tituloKata.value;
-    const categoria = categoriaKata.value;
-    const dificultad = dificultadKata.value;
-    const descripcion = descripcionKata.value;
+    const titulo = tituloKataEditar.value;
+    const categoria = categoriaKataEditar.value;
+    const dificultad = dificultadKataEditar.value;
+    const descripcion = descripcionKataEditar.value;
     // const kata = new Kata(titulo, categoria, dificultad, descripcion);
     
     mensaje.textContent = catalogo.editarKata(tituloOriginal, titulo, categoria, dificultad, descripcion);
