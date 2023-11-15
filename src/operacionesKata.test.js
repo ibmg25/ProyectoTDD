@@ -96,5 +96,12 @@ describe("Editar una kata del catalogo", () => {
     });
 
 
+    it("deberia devolver un mensaje afirmando que la kata se ha editado exitosamente", () => {
+  
+      const kata = new Kata("kataAEditar");
+      catalogo.insertarKata(kata);
+      const mensajeEdicion = "Kata editada con éxito.";
+      expect(catalogo.editarKata("kataAEditar", "nuevoTitulo", "Validacion y formularios", "Facil", "Nueva descripcion")).toEqual(mensajeEdicion);
+  });
 });
 
