@@ -21,7 +21,7 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#descripcion-kata-editar").should("have.value", "Nueva descripcion");
     });
 
-    it("deberia devolver la kata con los valores que quiero modificar", () => {
+    it("deberia devolver un mensaje confirmando que la kata ha sido editada exitosamente", () => {
         cy.visit("/");
         cy.get('.boton-editar').eq(0).click();
         cy.get("#titulo-kata-editar").clear().type("NuevoTitulo");
@@ -31,6 +31,8 @@ describe("Editar una kata del catalogo", () => {
         cy.get("input[type='submit']").eq(3).click();
         cy.get("#mensaje2-div").should("contain", "Kata editada con éxito.");
     });
+
+    
 });
 
   

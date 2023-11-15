@@ -170,12 +170,13 @@ formCrearKata.addEventListener("submit", (event) => {
 const divEditar = document.querySelector("#divEditar");
 const formEditarKata = document.querySelector("#editar_kata-form");
 const botonesEditar = document.getElementsByClassName("boton-editar");
-
+let tituloOriginal;
 
 for (var i = 0; i < botonesEditar.length; i++) {
     (function(index) {
         botonesEditar[index].onclick = function() {
             const kata = catalogo.getLista()[index];
+            tituloOriginal = kata.getTitulo();
             document.getElementById("titulo-kata-editar").value = kata.getTitulo();
             document.getElementById("categoria-kata-editar").value = kata.getCategoria();
             document.getElementById("dificultad-kata-editar").value = kata.getDificultad();
@@ -190,15 +191,15 @@ for (var i = 0; i < botonesEditar.length; i++) {
 
 
 
-formCrearKata.addEventListener("submit", (event) => {
-    event.preventDefault();
+formEditarKata.addEventListener("submit", (event) => {
+    event.preventDefault(); 
     const titulo = tituloKata.value;
     const categoria = categoriaKata.value;
     const dificultad = dificultadKata.value;
     const descripcion = descripcionKata.value;
-    const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    // const kata = new Kata(titulo, categoria, dificultad, descripcion);
     
-    mensaje.textContent = catalogo.insertarKata(kata);
+    mensaje.textContent = catalogo.editarKata(tituloOriginal, titulo, categoria, dificultad, descripcion);
     mensaje.style.display = "block";
 
     divCat.style.display = "block";
