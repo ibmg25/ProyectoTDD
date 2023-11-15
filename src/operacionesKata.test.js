@@ -70,16 +70,18 @@ describe("Editar una kata del catalogo", () => {
   
       const kata = new Kata("kataAEditar");
       catalogo.insertarKata(kata);
-      catalogo.editarKata("kataAEditar");
-      expect(catalogo.obtenerPosicionKata(kata)).toEqual(kata);
+      const posicion = catalogo.obtenerPosicionKata(kata);
+      expect(catalogo.getLista()[posicion]).toEqual(kata);
     });
   
     it("deberia devolver la kata que quiero editar con un parametro editado", () => {
   
         const kata = new Kata("kataAEditar");
         const kataEsperada = new Kata("nuevoTitulo");
-        catalogo.insertarKata(kata)
-        expect(catalogo.editarKata("kataAEditar", "nuevoTitulo")).toEqual(kataEsperada);
+        catalogo.insertarKata(kata);
+        catalogo.editarKata("kataAEditar", "nuevoTitulo");
+        const posicion = catalogo.obtenerPosicionKata(kata);
+        expect(catalogo.getLista()[posicion]).toEqual(kataEsperada);
     });
 
     
@@ -87,8 +89,10 @@ describe("Editar una kata del catalogo", () => {
   
         const kata = new Kata("kataAEditar");
         const kataEsperada = new Kata("nuevoTitulo", "Validacion y formularios", "Facil", "Nueva descripcion");
-        catalogo.insertarKata(kata)
-        expect(catalogo.editarKata("kataAEditar", "nuevoTitulo", "Validacion y formularios", "Facil", "Nueva descripcion")).toEqual(kataEsperada);
+        catalogo.insertarKata(kata);
+        catalogo.editarKata("kataAEditar", "nuevoTitulo", "Validacion y formularios", "Facil", "Nueva descripcion");
+        const posicion = catalogo.obtenerPosicionKata(kata);
+        expect(catalogo.getLista()[posicion]).toEqual(kataEsperada);
     });
 
 
