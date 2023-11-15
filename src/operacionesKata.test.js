@@ -17,21 +17,21 @@ describe("Añadir una nueva kata al catalogo", () => {
   
     it("deberia devolver un mensaje de confirmacion exitoso al insertar una nueva kata al catalogo", () => {
   
-      const kata = new Kata("Kata nueva", "Sin Asignar", "Media", "nueva descripcion");
+      const kata = new Kata("Kata nueva", "Sin Asignar", "Intermedia", "nueva descripcion");
       const mensajeEsperado = "Kata nueva agregada al catálogo con éxito.";
       expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
     });
   
     it("deberia devolver un mensaje de error al insertar una nueva kata con una longitud de titulo invalido", () => {
   
-      const kata = new Kata("ka", "Ninguna", "Media", "nueva descripcion");
+      const kata = new Kata("ka", "Ninguna", "Intermedia", "nueva descripcion");
       const mensajeEsperado = "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
       expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
     });
   
     it("deberia devolver un mensaje de error al insertar una nueva kata con caracteres de titulo invalido", () => {
   
-      const kata = new Kata("kat$", "Ninguna", "Media", "nueva descripcion");
+      const kata = new Kata("kat$", "Ninguna", "Intermedia", "nueva descripcion");
       const mensajeEsperado = "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
       expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
     });
@@ -39,7 +39,7 @@ describe("Añadir una nueva kata al catalogo", () => {
     
     it("deberia devolver un mensaje de error al insertar una nueva kata con una categoria invalida", () => {
   
-      const kata = new Kata("kata", "categoria invalida", "Media", "nueva descripcion");
+      const kata = new Kata("kata", "categoria invalida", "Intermedia", "nueva descripcion");
       const mensajeEsperado = "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
       expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
     });
@@ -53,7 +53,7 @@ describe("Añadir una nueva kata al catalogo", () => {
   
     it("deberia devolver un mensaje de error al insertar una nueva kata con una descripcion invalida", () => {
   
-      const kata = new Kata("kata", "Ninguna", "Media", "");
+      const kata = new Kata("kata", "Ninguna", "Intermedia", "");
       const mensajeEsperado = "Algunos campos podrían ser inválidos. Por favor, verifíquelos.";
       expect(catalogo.insertarKata(kata)).toEqual(mensajeEsperado);
     });

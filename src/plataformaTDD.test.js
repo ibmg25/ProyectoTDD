@@ -40,9 +40,9 @@ describe("Filtrar katas por dificultad", () => {
     kata = new Kata();
   });
 
-  it("deberia mostrar la dificultad de una kata Media", () => {
-    kata.setDificultad("Media");
-    expect(kata.getDificultad()).toEqual("Media");
+  it("deberia mostrar la dificultad de una kata Intermedia", () => {
+    kata.setDificultad("Intermedia");
+    expect(kata.getDificultad()).toEqual("Intermedia");
   });
 
   it("deberia asignar la dificultad de una kata Facil", () => {
@@ -64,7 +64,7 @@ describe("Filtrar katas por dificultad", () => {
     kata1.setDificultad("Facil");
     kata4.setDificultad("Facil");
     kata2.setDificultad("Dificil");
-    kata3.setDificultad("Media");
+    kata3.setDificultad("Intermedia");
     if (kata1.getDificultad() == "Facil")
       catalogo.insertarKata(kata1);
     if (kata2.getDificultad() == "Facil")

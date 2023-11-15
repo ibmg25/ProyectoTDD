@@ -32,7 +32,7 @@ class Validador{
         let valido = false;
         const nivelesDificultad = [
             "Facil",
-            "Media",
+            "Intermedia",
             "Dificil"
         ];
         if (nivelesDificultad.includes(kata.getDificultad())) {

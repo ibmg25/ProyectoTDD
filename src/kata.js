@@ -1,6 +1,6 @@
 class Kata{
 
-  constructor(titulo = "Kata", categoria = "Sin Asignar", dificultad = "Media", descripcion = "Descripcion vacia"){
+  constructor(titulo = "Kata", categoria = "Sin Asignar", dificultad = "Intermedia", descripcion = "Descripcion vacia"){
     this.titulo = titulo;
     this.categoria = categoria;
     this.dificultad = dificultad;

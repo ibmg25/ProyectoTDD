@@ -22,7 +22,7 @@
         <select id="filtrar-dificultad-kata" name="dificultad" required>
         <option value="Todas">Todas</option>
         <option value="Facil">Facil</option>
-        <option value="Media">Media</option>
+        <option value="Intermedia">Intermedia</option>
         <option value="Dificil">Dificil</option>
         </select>
 
@@ -55,7 +55,7 @@
         <label for="dificultad">Dificultad:</label>
         <select id="dificultad-kata" name="dificultad" required>
         <option value="Facil">Facil</option>
-        <option value="Intermedia">Media</option>
+        <option value="Intermedia">Intermedia</option>
         <option value="Dificil">Dificil</option>
         </select>
         <br>
@@ -68,6 +68,36 @@
       </form>
       <a class="boton-volver" href="./index.html">Volver</a>  
     </div>
+
+    <div id="divEditar" style="display: none;">
+      <h1>Editar Kata</h1>
+      <form id="editar_kata-form">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo-kata-editar" name="titulo" required>
+        <br>
+
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria-kata-editar" name="categoria" required>
+        <br>
+
+        <label for="dificultad">Dificultad:</label>
+        <select id="dificultad-kata-editar" name="dificultad" required>
+        <option value="Facil">Facil</option>
+        <option value="Intermedia">Intermedia</option>
+        <option value="Dificil">Dificil</option>
+        </select>
+        <br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion-kata-editar" name="descripcion" rows="4" cols="50" required></textarea>
+        <br>
+
+        <input type="submit" value="Editar Kata">
+      </form>
+      <a class="boton-volver" href="./index.html">Volver</a>  
+    </div>
+
+
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
