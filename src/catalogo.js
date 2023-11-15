@@ -41,7 +41,11 @@ class Catalogo{
     kataEditada.setCategoria(nuevaCategoria);
     kataEditada.setDificultad(nuevaDificultad);
     kataEditada.setDescripcion(nuevaDescripcion);
-    return kataEditada;
+    return "Kata editada con éxito.";
+  }
+
+  obtenerPosicionKata(kata){
+    return this.listakatas.findIndex(k => k === kata);
   }
 }
 
