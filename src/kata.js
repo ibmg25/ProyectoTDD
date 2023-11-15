@@ -31,6 +31,10 @@ class Kata{
       return this.categoria;
     }
 
+    setDescripcion(desc){
+      this.descripcion = desc;
+    }
+
     getDescripcion(){
       return this.descripcion;
     }

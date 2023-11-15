@@ -35,9 +35,12 @@ class Catalogo{
     return this.listakatas.filter(kata => kata.getDificultad() === dif); 
   }
 
-  editarKata(kataAEditar, nuevoTitulo = this.buscarPorTitulo(kataAEditar).getTitulo()){
+  editarKata(kataAEditar, nuevoTitulo = this.buscarPorTitulo(kataAEditar).getTitulo(), nuevaCategoria = this.buscarPorTitulo(kataAEditar).getCategoria(), nuevaDificultad = this.buscarPorTitulo(kataAEditar).getDificultad(), nuevaDescripcion = this.buscarPorTitulo(kataAEditar).getDescripcion() ){
     const kataEditada = this.buscarPorTitulo(kataAEditar);
     kataEditada.setTitulo(nuevoTitulo);
+    kataEditada.setCategoria(nuevaCategoria);
+    kataEditada.setDificultad(nuevaDificultad);
+    kataEditada.setDescripcion(nuevaDescripcion);
     return kataEditada;
   }
 }
