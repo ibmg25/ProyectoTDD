@@ -43,10 +43,6 @@ class Catalogo{
     kataEditada.setDescripcion(nuevaDescripcion);
     return "Kata editada con éxito.";
   }
-
-  obtenerPosicionKata(kata){
-    return this.listakatas.findIndex(k => k === kata);
-  }
 }
 
 export default Catalogo;
