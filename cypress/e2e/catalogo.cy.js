@@ -32,7 +32,7 @@ describe("Mostrar lista de katas", () => {
 describe("Filtrar por categorias", () => {
   it("deberia mostrar una lista vacía si no hay katas de una categoría", () => {
     cy.visit("http://localhost:1234");
-    cy.get("#filtrar-categoria-kata").select("Sin asignar");
+    cy.get("#filtrar-categoria-kata").select("Sin Asignar");
     cy.get("#resultado-div").should("be.empty");
   });
   it("deberia mostrar una lista con katas de una categoría", () => {

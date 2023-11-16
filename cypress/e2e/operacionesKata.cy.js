@@ -3,7 +3,7 @@ describe("Editar una kata del catalogo", () => {
       cy.visit("/");
       cy.get('.boton-editar').eq(0).click();
       cy.get("#titulo-kata-editar").should("have.value", "Kata");
-      cy.get("#categoria-kata-editar").should("have.value", "Sin Asignar");
+      cy.get("#categoria-kata-editar").should("have.value", "Validacion y formularios");
       cy.get("#dificultad-kata-editar").should("have.value", "Intermedia");
       cy.get("#descripcion-kata-editar").should("have.value", "Descripcion vacia");
     });
@@ -41,6 +41,16 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#descripcion-kata-editar").clear().type("Nueva descripcion");
         cy.get("input[type='submit']").eq(3).click();
         cy.get(".title-kata").eq(0).should("contain", "NuevoTitulo");
+    });
+
+    it("deberia devolver la kata que quiero editar tras aplicar un filtro", () => {
+        cy.visit("/");
+        cy.get("#filtrar-dificultad-kata").select("Intermedia");
+        cy.get('.boton-editar').eq(0).click();
+        cy.get("#titulo-kata-editar").should("have.value", "Kata");
+        cy.get("#categoria-kata-editar").should("have.value", "Validacion y formularios");
+        cy.get("#dificultad-kata-editar").should("have.value", "Intermedia");
+        cy.get("#descripcion-kata-editar").should("have.value", "Descripcion vacia");
     });
 });
 

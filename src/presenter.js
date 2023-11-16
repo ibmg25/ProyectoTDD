@@ -4,10 +4,10 @@ import Kata from "./kata.js";
 let div = document.querySelector("#resultado-div");
 
 let catalogo = new Catalogo();
+let catalogoAMostrar = catalogo;
 
-export {catalogo};
 
-const kata1 = new Kata();
+const kata1 = new Kata("Kata", "Validacion y formularios", "Intermedia");
 const kata2 = new Kata("Kata 2", "Validacion y formularios", "Intermedia", "nueva descripcion");
 const kata3 = new Kata("Kata 3", "Validacion y formularios", "Facil", "nueva descripcion");
 const kata4 = new Kata("Kata 4", "Validacion y formularios", "Dificil", "nueva descripcion");
@@ -20,14 +20,39 @@ catalogo.insertarKata(kata4);
 catalogo.insertarKata(kata5);
 catalogo.insertarKata(kata6);
 
-const lista = catalogo.getLista();
-let listaAMostrar = [];
-for (i = 0; i < catalogo.getLista().length; i++){
-    let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div><a href='#' class='boton-editar'>Editar</a></div>");
-    listaAMostrar.push(kata);
+const divEditar = document.querySelector("#divEditar");
+const formEditarKata = document.querySelector("#editar_kata-form");
+const botonesEditar = document.getElementsByClassName("boton-editar");
+let tituloOriginal;
+function actualizarEventoBotonesEditar(){
+    for (let i = 0; i < botonesEditar.length; i++) {
+        botonesEditar[i].onclick = function() {
+            let kata = catalogoAMostrar.getLista()[i];
+            tituloOriginal = kata.getTitulo();
+            document.getElementById("titulo-kata-editar").value = kata.getTitulo();
+            document.getElementById("categoria-kata-editar").value = kata.getCategoria();
+            document.getElementById("dificultad-kata-editar").value = kata.getDificultad();
+            document.getElementById("descripcion-kata-editar").value = kata.getDescripcion();
+            divCat.style.display = "none";
+            divEditar.style.display = "block";
+        };
+    }
 }
 
-div.innerHTML = listaAMostrar.join(' ');
+function generarListaKatasHTML(){
+
+    const lista = catalogoAMostrar.getLista();
+    let listaAMostrar = [];
+    for (i = 0; i < catalogoAMostrar.getLista().length; i++){
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div><a href='#' class='boton-editar'>Editar</a></div>");
+        listaAMostrar.push(kata);
+    }
+    
+    div.innerHTML = listaAMostrar.join(' ');
+    actualizarEventoBotonesEditar();
+}
+generarListaKatasHTML();
+
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
@@ -36,15 +61,10 @@ const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
 
 formBorrarFiltros.addEventListener("submit", (event) => {
-    const lista = catalogo.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
-    }
-
-    div.innerHTML = listaAMostrar.join(' ');
-})
+    event.preventDefault();
+    catalogoAMostrar = catalogo;
+    generarListaKatasHTML();
+});
 
 formBuscarTitulo.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -55,14 +75,8 @@ formBuscarTitulo.addEventListener("submit", (event) => {
     if (kataBuscada != null) {
         catalogo2.insertarKata(kataBuscada);
     }
-    
-    const lista = catalogo2.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo2.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
-    }
-    div.innerHTML = listaAMostrar.join(' ');
+    catalogoAMostrar = catalogo2;
+    generarListaKatasHTML();
 });
 
 filtroDificultad.addEventListener("change", (event) => {
@@ -70,26 +84,15 @@ filtroDificultad.addEventListener("change", (event) => {
     const catalogo2 = new Catalogo();
 
     if (dificultadSeleccionada == "Todas"){
-        const lista = catalogo.getLista();
-        let listaAMostrar = [];
-        for (i = 0; i < catalogo.getLista().length; i++){
-            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-            listaAMostrar.push(kata);
-        }
-        div.innerHTML = listaAMostrar.join(' ');
+        catalogoAMostrar = catalogo;
+        generarListaKatasHTML();
     }
     else{
         catalogo.buscarPorDificultad(dificultadSeleccionada).forEach(kata => {
             catalogo2.insertarKata(kata)
         });
-
-        const lista = catalogo2.getLista();
-        let listaAMostrar = [];
-        for (i = 0; i < catalogo2.getLista().length; i++){
-            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-            listaAMostrar.push(kata);
-        }
-        div.innerHTML = listaAMostrar.join(' ');
+        catalogoAMostrar = catalogo2;
+        generarListaKatasHTML();
     }
     
 });
@@ -99,27 +102,16 @@ filtroCategoria.addEventListener("change", (event) => {
     const catalogo2 = new Catalogo();
 
     if (categoriaSeleccionada == "Todas"){
-        const lista = catalogo.getLista();
-        let listaAMostrar = [];
-        for (i = 0; i < catalogo.getLista().length; i++){
-            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-            listaAMostrar.push(kata);
-        }
-        div.innerHTML = listaAMostrar.join(' ');
+        catalogoAMostrar = catalogo;
+        generarListaKatasHTML();
     }
     else{
 
         catalogo.buscarPorCategoria(categoriaSeleccionada).forEach(kata => {
             catalogo2.insertarKata(kata)
         });
-
-        const lista = catalogo2.getLista();
-        let listaAMostrar = [];
-        for (i = 0; i < catalogo2.getLista().length; i++){
-            let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-            listaAMostrar.push(kata);
-        }
-        div.innerHTML = listaAMostrar.join(' ');
+        catalogoAMostrar = catalogo2;
+        generarListaKatasHTML();
     }
     
 });
@@ -153,14 +145,8 @@ formCrearKata.addEventListener("submit", (event) => {
     divCat.style.display = "block";
     divCrear.style.display = "none";
 
-    const lista = catalogo.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
-    }
-
-    div.innerHTML = listaAMostrar.join(' ');
+    catalogoAMostrar = catalogo;
+    generarListaKatasHTML();
 
 });
 
@@ -168,25 +154,9 @@ formCrearKata.addEventListener("submit", (event) => {
 
 /////////// Editar kata
 
-const divEditar = document.querySelector("#divEditar");
-const formEditarKata = document.querySelector("#editar_kata-form");
-const botonesEditar = document.getElementsByClassName("boton-editar");
-let tituloOriginal;
 
-for (var i = 0; i < botonesEditar.length; i++) {
-    (function(index) {
-        botonesEditar[index].onclick = function() {
-            const kata = catalogo.getLista()[index];
-            tituloOriginal = kata.getTitulo();
-            document.getElementById("titulo-kata-editar").value = kata.getTitulo();
-            document.getElementById("categoria-kata-editar").value = kata.getCategoria();
-            document.getElementById("dificultad-kata-editar").value = kata.getDificultad();
-            document.getElementById("descripcion-kata-editar").value = kata.getDescripcion();
-            divCat.style.display = "none";
-            divEditar.style.display = "block";
-        };
-    })(i);
-}
+
+
 
 
 
@@ -209,13 +179,7 @@ formEditarKata.addEventListener("submit", (event) => {
     divCat.style.display = "block";
     divEditar.style.display = "none";
 
-    const lista = catalogo.getLista();
-    let listaAMostrar = [];
-    for (i = 0; i < catalogo.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div></div>");
-        listaAMostrar.push(kata);
-    }
-
-    div.innerHTML = listaAMostrar.join(' ');
+    catalogoAMostrar = catalogo;
+    generarListaKatasHTML();
 
 });
