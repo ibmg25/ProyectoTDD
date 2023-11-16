@@ -1,7 +1,7 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
 
-let div = document.querySelector("#resultado-div");
+let divListaKatas = document.querySelector("#lista-katas-div");
 
 let catalogo = new Catalogo();
 let catalogoAMostrar = catalogo;
@@ -48,7 +48,7 @@ function generarListaKatasHTML(){
         listaAMostrar.push(kata);
     }
     
-    div.innerHTML = listaAMostrar.join(' ');
+    divListaKatas.innerHTML = listaAMostrar.join(' ');
     actualizarEventoBotonesEditar();
 }
 generarListaKatasHTML();
