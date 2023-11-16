@@ -43,6 +43,11 @@ class Catalogo{
     kataEditada.setDescripcion(nuevaDescripcion);
     return "Kata editada con éxito.";
   }
+
+  buscarPorDescripcion(descripcion) {
+    return this.listakatas.find(kata => kata.getDescripcion() === descripcion);
+  }
+
 }
 
 export default Catalogo;
