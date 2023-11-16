@@ -147,6 +147,12 @@ describe("Filtrar katas por dificultad", () => {
     expect(katasPorCategoria.length).toEqual(2);
   });
   
+  it("deberia mostrar la descripcion de la kata", () => {
+    const kata1 = new Kata();
+    catalogo.insertarKata(kata1);
+    expect(kata1.getDescripcion()).toEqual("Descripcion vacia");
+  });
+  
   });
 });
 
