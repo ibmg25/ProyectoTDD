@@ -45,7 +45,7 @@ function generarListaKatasHTML(){
     const lista = catalogoAMostrar.getLista();
     let listaAMostrar = [];
     for (i = 0; i < catalogoAMostrar.getLista().length; i++){
-        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div><a href='#' class='boton-editar'>Editar</a></div>");
+        let kata = ("<div class='kata'><div class='title-kata'>" + lista[i].titulo + "</div><div class='category-kata'>"+ lista[i].categoria + "</div><div class='difficulty-kata'>"+ lista[i].dificultad + "</div><div class='description-kata'>"+ lista[i].descripcion + "</div><a href='#' class='boton-editar'>Editar</a> <a href='#' class='boton-eliminar'>Eliminar</a> </div>");
         listaAMostrar.push(kata);
     }
     
@@ -63,8 +63,6 @@ for(let i = 0; i < botonesVolver.length; i++){
         divCrear.style.display = "none";
     };
 }
-
-
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
