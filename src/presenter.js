@@ -64,14 +64,6 @@ for(let i = 0; i < botonesVolver.length; i++){
     };
 }
 
-const botonesEliminar = document.getElementsByClassName("boton-eliminar");
-
-for(let i = 0; i < botonesEliminar.length; i++){
-    botonesEliminar[i].onclick = function(){
-        console.log("Eliminar kata");
-    };
-}
-
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
 const formBorrarFiltros = document.querySelector("#eliminarFiltros-form");
@@ -201,3 +193,16 @@ formEditarKata.addEventListener("submit", (event) => {
     generarListaKatasHTML();
 
 });
+
+
+////eliminar kata
+
+const botonesEliminar = document.getElementsByClassName("boton-eliminar");
+
+for(let i = 0; i < botonesEliminar.length; i++){
+    botonesEliminar[i].onclick = function(){
+        let kata = catalogoAMostrar.getLista()[i];
+        console.log(catalogo.eliminarKata(kata.titulo));
+        generarListaKatasHTML();
+    };
+}

@@ -46,3 +46,17 @@ describe("Filtrar por categorias", () => {
     cy.get("#lista-katas-div").should("not.be.empty");
   });
 });
+
+describe("Mostrar lista de katas", () => {
+  
+  it("deberia eliminar la kata seleccionada", () => {
+    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
+
+    cy.get("#lista-katas-div").should("contain", 'Kata 4')
+
+    cy.get(".boton-eliminar").eq(3).click();
+
+    cy.get("#lista-katas-div").should("not.contain", 'Kata 4')
+
+  });
+});
