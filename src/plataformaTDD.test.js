@@ -162,4 +162,18 @@ describe("Filtrar katas por dificultad", () => {
   });
 });
 
+describe("Modificar/Eliminar Katas", () => {
+
+  let catalogo;
+    beforeEach(() => {
+      catalogo = new Catalogo();
+    });
+
+  it("deberia eliminar una kata", () => {
+    const kata1 = new Kata("kata1");
+   catalogo.insertarKata(kata1);
+   expect(catalogo.eliminarKata("kata1")).toEqual(true);
+  });  
+
+});
 

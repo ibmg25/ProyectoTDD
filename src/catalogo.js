@@ -44,6 +44,16 @@ class Catalogo{
     return "Kata editada con éxito.";
   }
 
+  eliminarKata(kataAEliminar){
+    let a = this.listakatas.length;
+    this.listakatas = this.listakatas.filter(kata => kata.getTitulo() !== kataAEliminar);
+    let b = this.listakatas.length;
+    if (a > b)
+      return true;
+    else
+      return false;
+  }
+
   buscarPorDescripcion(descripcion) {
     return this.listakatas.find(kata => kata.getDescripcion() === descripcion);
   }
