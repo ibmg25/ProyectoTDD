@@ -24,6 +24,7 @@ const divEditar = document.querySelector("#divEditar");
 const formEditarKata = document.querySelector("#editar_kata-form");
 const botonesEditar = document.getElementsByClassName("boton-editar");
 let tituloOriginal;
+
 function actualizarEventoBotonesEditar(){
     for (let i = 0; i < botonesEditar.length; i++) {
         botonesEditar[i].onclick = function() {
@@ -52,6 +53,17 @@ function generarListaKatasHTML(){
     actualizarEventoBotonesEditar();
 }
 generarListaKatasHTML();
+
+const botonesVolver = document.getElementsByClassName("boton-volver");
+
+for(let i = 0; i < botonesVolver.length; i++){
+    botonesVolver[i].onclick = function() {
+        divCat.style.display = "block";
+        divEditar.style.display = "none";
+        divCrear.style.display = "none";
+    };
+}
+
 
 
 const tituloABuscar = document.querySelector("#titulo");
