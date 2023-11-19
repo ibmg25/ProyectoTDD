@@ -175,5 +175,15 @@ describe("Modificar/Eliminar Katas", () => {
    expect(catalogo.eliminarKata("kata1")).toEqual(true);
   });  
 
+  it("no deberia eliminar una kata porque no hya katas", () => {
+   expect(catalogo.eliminarKata("kata1")).toEqual(false);
+  });  
+
+  it("no deberia eliminar una kata porque la que se busca eliminar no existe", () => {
+    const kata1 = new Kata("kata1");
+   catalogo.insertarKata(kata1);
+   expect(catalogo.eliminarKata("kata2")).toEqual(false);
+  }); 
+
 });
 
