@@ -8,4 +8,13 @@ describe("Registrarse con usuario y contrasenia", () => {
       cy.get("#boton-registro").should("be.visible");
     });
 
+    it("deberia mostrar un formulario de registro al hacer clic en registrar", () => {
+      cy.visit("/");
+      cy.get('#boton-registro').click();
+      cy.get("#registrarse-form").should("be.visible");
+    });
+    
+
+    
+
 });
