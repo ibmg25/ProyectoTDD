@@ -1,4 +1,5 @@
 import GestionUsuarios from "./gestionUsuarios";
+import Usuario from "./usuario";
 
 describe("Registrar con usuario y contraseña", () => {
 
@@ -16,4 +17,11 @@ describe("Registrar con usuario y contraseña", () => {
         const mensajeEsperado = "¡Bienvenido user123! Tu registro se ha completado con éxito.";
         expect(gestionUsuarios.registrarUsuario("user123", "contrasenia")).toEqual(mensajeEsperado);
     });
+
+    it("deberia devolverme la informacion del usuario registrado", () => {
+        const usuarioEsperado = new Usuario("usuario", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario", "contrasenia");
+        expect(gestionUsuarios.obtenerUsuario("usuario")).toEqual(usuarioEsperado);
+    });
+    
 });
