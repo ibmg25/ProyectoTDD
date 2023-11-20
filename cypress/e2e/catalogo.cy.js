@@ -1,16 +1,22 @@
+beforeEach(() => {
+  cy.visit("/");
+  cy.get('#boton-registro').click();
+  cy.get("#registrarse-form").should("be.visible");
+  cy.get("#username-registro").type("user");
+  cy.get("#password-registro").type("123");
+  cy.get("input[type='submit']").eq(4).click();
+});
 
 describe("Mostrar lista de katas", () => {
   
-  it("deberia mostrar una lista con varias katas", () => {
-    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
 
+  it("deberia mostrar una lista con varias katas", () => {
     cy.get("#lista-katas-div")
       .find(".kata")   // Busca elementos con la clase .kata dentro del div
       .should("have.length.greaterThan", 0); // Asegura que haya al menos un elemento .kata dentro del div
   });
 
   it("deberia mostrar la kata buscada por nombre", () => {
-    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
 
     //cy.get("#resultado-div")
     cy.get("#titulo").type("Kata 2");
@@ -19,8 +25,7 @@ describe("Mostrar lista de katas", () => {
   });
 
   it("deberia mostrar la kata buscada por dificultad", () => {
-    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
-
+ 
     cy.get("#lista-katas-div")
     cy.get("#filtrar-dificultad-kata").select("Facil");
     cy.get("#buscar-button").click() // Busca elementos con la clase .kata dentro del div
@@ -31,17 +36,17 @@ describe("Mostrar lista de katas", () => {
 
 describe("Filtrar por categorias", () => {
   it("deberia mostrar una lista vacía si no hay katas de una categoría", () => {
-    cy.visit("/");
+
     cy.get("#filtrar-categoria-kata").select("Sin Asignar");
     cy.get("#lista-katas-div").should("be.empty");
   });
   it("deberia mostrar una lista con katas de una categoría", () => {
-    cy.visit("/");
+
     cy.get("#filtrar-categoria-kata").select("Lógica y matematicas");
     cy.get("#lista-katas-div").should("not.be.empty");
   });
   it("deberia mostrar una lista con katas de otra categoría", () => {
-    cy.visit("/");
+
     cy.get("#filtrar-categoria-kata").select("Validacion y formularios");
     cy.get("#lista-katas-div").should("not.be.empty");
   });
@@ -50,7 +55,6 @@ describe("Filtrar por categorias", () => {
 describe("Mostrar lista de katas", () => {
   
   it("deberia eliminar la kata seleccionada", () => {
-    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
 
     cy.get("#lista-katas-div").should("contain", 'Kata 4')
 
@@ -61,7 +65,6 @@ describe("Mostrar lista de katas", () => {
   });
 
   it("deberia eliminar varias katas seleccionadas", () => {
-    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
 
     cy.get("#lista-katas-div").should("contain", 'Kata 2')
     cy.get(".boton-eliminar").eq(1).click();

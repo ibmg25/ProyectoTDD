@@ -1,13 +1,14 @@
 import Catalogo from "./catalogo.js";
+import GestionUsuarios from "./gestionUsuarios.js";
 import Kata from "./kata.js";
 
-/**********************************************************Banner bienvenida y registro **************/
+
 const divCat = document.querySelector("#divCatalogo");
 const divBienvenida = document.querySelector("#divBienvenida")
 const divRegistro = document.querySelector("#divRegistro");
 const botonCrearKata = document.querySelector(".boton-crear_kata");
 const botonRegistrar = document.querySelector("#boton-registro");
-
+const mensaje = document.querySelector("#mensaje2-div");
 
 divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
@@ -170,7 +171,7 @@ const categoriaKata = document.querySelector("#categoria-kata");
 const dificultadKata = document.querySelector("#dificultad-kata");
 const descripcionKata = document.querySelector("#descripcion-kata");
 const formCrearKata = document.querySelector("#crear_kata-form");
-const mensaje = document.querySelector("#mensaje2-div");
+
 
 formCrearKata.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -185,7 +186,7 @@ formCrearKata.addEventListener("submit", (event) => {
 
     divCat.style.display = "block";
     divCrear.style.display = "none";
-
+    botonCrearKata.style.display = "block"; 
     catalogoAMostrar = catalogo;
     generarListaKatasHTML();
 
@@ -219,6 +220,31 @@ formEditarKata.addEventListener("submit", (event) => {
 
     divCat.style.display = "block";
     divEditar.style.display = "none";
+
+    catalogoAMostrar = catalogo;
+    generarListaKatasHTML();
+
+});
+
+
+const formRegistrar = document.querySelector("#registrarse-form");
+const usernameReg = document.querySelector("#username-registro");
+const passwordReg = document.querySelector("#password-registro");
+
+
+let gestionUsuarios = new GestionUsuarios();
+
+formRegistrar.addEventListener("submit", (event) => {
+    event.preventDefault(); 
+    const username = usernameReg.value;
+    const password = passwordReg.value;
+    
+    mensaje.textContent = gestionUsuarios.registrarUsuario(username, password);
+    mensaje.style.display = "block";
+
+    divCat.style.display = "block";
+    divRegistro.style.display = "none";
+
 
     catalogoAMostrar = catalogo;
     generarListaKatasHTML();
