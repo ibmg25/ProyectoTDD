@@ -24,4 +24,12 @@ describe("Registrar con usuario y contraseña", () => {
         expect(gestionUsuarios.obtenerUsuario("usuario")).toEqual(usuarioEsperado);
     });
     
+    it("deberia devolverme la lista de usuarios registrados", () => {
+        const usuario1 = new Usuario("usuario1", "contrasenia");
+        const usuario2 = new Usuario("usuario2", "contrasenia");
+        const usuariosEsperados = [usuario1, usuario2];
+        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario2", "contrasenia");
+        expect(gestionUsuarios.obtenerUsuarios()).toEqual(usuariosEsperados);
+    });
 });
