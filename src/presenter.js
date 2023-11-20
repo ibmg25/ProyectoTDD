@@ -40,6 +40,18 @@ function actualizarEventoBotonesEditar(){
     }
 }
 
+const botonesEliminar = document.getElementsByClassName("boton-eliminar");
+
+function activarBotonesEliminr(){
+    for(let i = 0; i < botonesEliminar.length; i++){
+        botonesEliminar[i].onclick = function(){
+            let kata = catalogoAMostrar.getLista()[i];
+            console.log(catalogo.eliminarKata(kata.titulo));
+            generarListaKatasHTML();
+        };
+    }
+}
+
 function generarListaKatasHTML(){
 
     const lista = catalogoAMostrar.getLista();
@@ -51,6 +63,7 @@ function generarListaKatasHTML(){
     
     divListaKatas.innerHTML = listaAMostrar.join(' ');
     actualizarEventoBotonesEditar();
+    activarBotonesEliminr();
 }
 generarListaKatasHTML();
 
@@ -193,16 +206,3 @@ formEditarKata.addEventListener("submit", (event) => {
     generarListaKatasHTML();
 
 });
-
-
-////eliminar kata
-
-const botonesEliminar = document.getElementsByClassName("boton-eliminar");
-
-for(let i = 0; i < botonesEliminar.length; i++){
-    botonesEliminar[i].onclick = function(){
-        let kata = catalogoAMostrar.getLista()[i];
-        console.log(catalogo.eliminarKata(kata.titulo));
-        generarListaKatasHTML();
-    };
-}

@@ -59,4 +59,17 @@ describe("Mostrar lista de katas", () => {
     cy.get("#lista-katas-div").should("not.contain", 'Kata 4')
 
   });
+
+  it("deberia eliminar varias katas seleccionadas", () => {
+    cy.visit("/"); // Ajusta la ruta según la estructura de tu aplicación
+
+    cy.get("#lista-katas-div").should("contain", 'Kata 2')
+    cy.get(".boton-eliminar").eq(1).click();
+    cy.get("#lista-katas-div").should("not.contain", 'Kata 2')
+
+    cy.get("#lista-katas-div").should("contain", 'Kata 3')
+    cy.get(".boton-eliminar").eq(1).click();
+    cy.get("#lista-katas-div").should("not.contain", 'Kata 3')
+
+  });
 });
