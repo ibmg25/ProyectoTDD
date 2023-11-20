@@ -11,6 +11,27 @@
   </head>
 
   <body>
+    <div id="divBienvenida">
+      <div id="banner">¡Bienvenido a DevTestCoach!</div>
+      <a href="#" id="boton-registro">Registrarse</a> 
+    </div>
+
+    <div id="divRegistro" style="display: none;">
+      <h1>Registrarse</h1>
+      <form id="registrarse-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username-registro" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id= "password-registro" maxlength="8">
+
+        <br>
+        <input type="submit" value="Registrarse">
+      </form>
+      <a class="boton-volver" href="#">Volver</a>  
+    </div>
+
     <div id="divCatalogo">
       <h1>Catálogo</h1>
       <form id="buscar-form">

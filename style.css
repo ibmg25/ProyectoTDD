@@ -1,3 +1,36 @@
+#divBienvenida {
+    /* background-image: url('../../assets/background.jpg');  */
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 100px;
+    align-items: center;
+    height: 100vh;
+  }
+
+  
+  #banner {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  #boton-registro{
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px;
+    font-size: 1.2em; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
+  
+  #boton-registro{
+    background-color: #45a049;
+    
+  }
+
 body {
     font-family: Arial, sans-serif;
     background-color: white;

@@ -1,10 +1,28 @@
 import Catalogo from "./catalogo.js";
 import Kata from "./kata.js";
 
+/**********************************************************Banner bienvenida y registro **************/
+const divCat = document.querySelector("#divCatalogo");
+const divBienvenida = document.querySelector("#divBienvenida")
+const divRegistro = document.querySelector("#divRegistro");
+const botonCrearKata = document.querySelector(".boton-crear_kata");
+const botonRegistrar = document.querySelector("#boton-registro");
+
+
+divCat.style.display = "none";
+botonCrearKata.style.display = "none"; 
+divBienvenida.style.display = "block";
+
+botonRegistrar.onclick = function() {
+    divRegistro.style.display = "block";
+    divBienvenida.style.display = "none";
+};
+
 let divListaKatas = document.querySelector("#lista-katas-div");
 
 let catalogo = new Catalogo();
 let catalogoAMostrar = catalogo;
+
 
 
 const kata1 = new Kata("Kata", "Validacion y formularios", "Intermedia");
@@ -139,7 +157,7 @@ filtroCategoria.addEventListener("change", (event) => {
     
 });
 
-const divCat = document.querySelector("#divCatalogo");
+
 const divCrear = document.querySelector("#divCrear");
 
 document.getElementById("nuevaKata").onclick = function() {
