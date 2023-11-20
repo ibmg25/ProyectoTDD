@@ -32,4 +32,10 @@ describe("Registrar con usuario y contraseña", () => {
         gestionUsuarios.registrarUsuario("usuario2", "contrasenia");
         expect(gestionUsuarios.obtenerUsuarios()).toEqual(usuariosEsperados);
     });
+
+    it("deberia devolver un mensaje de error si se trata de registrar otro usuario con el mismo nombre de usuario", () => {
+        const mensajeEsperado = "Lo sentimos, este nombre de usuario ya está siendo utilizado."
+        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        expect(gestionUsuarios.registrarUsuario("usuario1", "contrasenia")).toEqual(mensajeEsperado);
+    });
 });

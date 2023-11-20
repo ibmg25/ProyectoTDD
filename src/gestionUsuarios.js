@@ -5,15 +5,25 @@ class GestionUsuarios{
         this.usuariosRegistrados = [];
     }
 
-    registrarUsuario(nombreDeUsuario, contrasenia){
-        const nuevoUsuario = new Usuario(nombreDeUsuario, contrasenia);
-        this.usuariosRegistrados.push(nuevoUsuario);
-        return "¡Bienvenido " + nombreDeUsuario +"! Tu registro se ha completado con éxito.";
+    obtenerUsuario(nombreDeUsuario){
+        const usuario = this.usuariosRegistrados.find(u => nombreDeUsuario === u.obtenerNombreDeUsuario() ); 
+        return usuario;
     }
 
-    obtenerUsuario(nombreDeUsuario){
-        return  new Usuario("usuario", "contrasenia");
+    registrarUsuario(nombreDeUsuario, contrasenia){
+        let mensaje = "¡Bienvenido " + nombreDeUsuario +"! Tu registro se ha completado con éxito.";
+        
+        if (this.obtenerUsuario(nombreDeUsuario) != undefined){
+            mensaje = "Lo sentimos, este nombre de usuario ya está siendo utilizado.";
+        }
+        else{
+            const nuevoUsuario = new Usuario(nombreDeUsuario, contrasenia);
+            this.usuariosRegistrados.push(nuevoUsuario);
+        }
+        return mensaje;
     }
+
+    
 
 
     obtenerUsuarios(){
