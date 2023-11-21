@@ -39,8 +39,12 @@ describe("Registrar con usuario y contraseña", () => {
         expect(gestionUsuarios.registrarUsuario("usuario1", "contrasenia")).toEqual(mensajeEsperado);
         
     });
-    it("deberia devolverme la contrasenia de un usuario", () => {
-        const usuario1 = new Usuario("usuario1", "contrasenia");
-        expect(usuario1.validarContraseniaParaUnUsuario("usuario1")).toEqual("contrasenia");
+ 
+    it("deberia aceptar el login de un usuario", () => {
+        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        expect(gestionUsuarios.VerficarUsuario("usuario1", "contrasenia")).toEqual(true);
+        
     });
+   
+
 });

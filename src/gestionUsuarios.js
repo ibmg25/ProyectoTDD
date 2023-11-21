@@ -1,3 +1,4 @@
+import { version } from "@babel/core";
 import Usuario from "./usuario";
 
 class GestionUsuarios{
@@ -22,9 +23,19 @@ class GestionUsuarios{
         }
         return mensaje;
     }
-
-    
-
+    VerficarUsuario(nombre,contrasenia) {
+        let verificar=false;        
+        for (let i = 0; i < this.usuariosRegistrados.length; i++) {
+           if(this.usuariosRegistrados[i].obtenerNombreDeUsuario()==nombre)
+           {
+                if(this.usuariosRegistrados[i].obtenerContrasenia()==contrasenia)
+                {
+                    verificar=true;
+                }
+           }
+        }
+        return verificar;
+    }
 
     obtenerUsuarios(){
         return this.usuariosRegistrados;
