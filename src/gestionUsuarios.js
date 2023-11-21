@@ -25,6 +25,7 @@ class GestionUsuarios{
     }
     VerficarUsuario(nombre,contrasenia) {
         let verificar=false;        
+        let mensaje = "Lo sentimos, usuario o contrasenia incorrectos.";
         for (let i = 0; i < this.usuariosRegistrados.length; i++) {
            if(this.usuariosRegistrados[i].obtenerNombreDeUsuario()==nombre)
            {
@@ -34,13 +35,15 @@ class GestionUsuarios{
                 }
            }
         }
-        if(verificar==false)
+        if(verificar==true)
         {
-           let mensaje = "Lo sentimos, usuario o contrasenia incorrectos.";
-            return mensaje;
+            return verificar;
+           
         }
-        return verificar;
+        return mensaje;
+       
     }
+
 
     obtenerUsuarios(){
         return this.usuariosRegistrados;

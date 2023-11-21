@@ -25,7 +25,31 @@
     cursor: pointer; 
     transition: background-color 0.3s; 
   }
+  #boton-Inicio{
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px;
+    font-size: 1.2em; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
+  #boton-volver-login{
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px;
+    font-size: 1.2em; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
   
+  #boton-Inicio{
+    background-color: #45a049;
+    
+  }
   #boton-registro{
     background-color: #45a049;
     
@@ -180,5 +204,16 @@ textarea {
     z-index: 1;
     font-family: 'Montserrat', sans-serif;
     
+}
+#mensajeLogin-div{
+  
+  color: #fa0303; 
+  padding: 20px; 
+  margin-top: 40px; 
+  text-align: center; 
+  display: none; 
+  position: static;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
 }
 

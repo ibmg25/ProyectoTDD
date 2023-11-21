@@ -2,18 +2,46 @@ import Catalogo from "./catalogo.js";
 import GestionUsuarios from "./gestionUsuarios.js";
 import Kata from "./kata.js";
 
-
+let gestionUsuarios = new GestionUsuarios();
 const divCat = document.querySelector("#divCatalogo");
+const botonInicio = document.querySelector("#boton-Inicio");
 const divBienvenida = document.querySelector("#divBienvenida")
 const divRegistro = document.querySelector("#divRegistro");
 const botonCrearKata = document.querySelector(".boton-crear_kata");
 const botonRegistrar = document.querySelector("#boton-registro");
 const mensaje = document.querySelector("#mensaje2-div");
-
+const botonVolverLogin = document.querySelector("#boton-volver-login");
+//const mensajeErrorLogin= document.querySelector("#mensajeLogin-div")
+//mensajeErrorLogin.style.display = "none";
 divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
 divBienvenida.style.display = "block";
+botonInicio.onclick = function()
+{
+   const nombre=document.querySelector("#loginUsername");
+   const contrasenia= document.querySelector("#loginPassword");
+   const nombreUsuario=nombre.value;
+   const contraseniaLogin=contrasenia.value;
+   if(gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin)==true)
+   {
+        divCat.style.display = "block";
+        divBienvenida.style.display = "none";
+        
+   }
+   else{
+   
+        divBienvenida.style.display = "block";
+       // mensajeErrorLogin.textContente=gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin);
+        //mensajeErrorLogin.style.display = "block";
+       
+   }
 
+}
+
+botonVolverLogin.onclick = function() {
+        divBienvenida.style.display = "block";
+        divRegistro.style.display="none";
+    };
 botonRegistrar.onclick = function() {
     divRegistro.style.display = "block";
     divBienvenida.style.display = "none";
@@ -95,6 +123,9 @@ for(let i = 0; i < botonesVolver.length; i++){
         divCrear.style.display = "none";
     };
 }
+
+
+
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
@@ -232,7 +263,7 @@ const usernameReg = document.querySelector("#username-registro");
 const passwordReg = document.querySelector("#password-registro");
 
 
-let gestionUsuarios = new GestionUsuarios();
+//let gestionUsuarios = new GestionUsuarios();
 
 formRegistrar.addEventListener("submit", (event) => {
     event.preventDefault(); 
@@ -242,11 +273,13 @@ formRegistrar.addEventListener("submit", (event) => {
     mensaje.textContent = gestionUsuarios.registrarUsuario(username, password);
     mensaje.style.display = "block";
 
-    divCat.style.display = "block";
+    divCat.style.display = "none";
     divRegistro.style.display = "none";
+    divBienvenida.style.display="block"
 
 
     catalogoAMostrar = catalogo;
     generarListaKatasHTML();
 
 });
+

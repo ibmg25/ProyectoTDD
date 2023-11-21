@@ -96,27 +96,28 @@
 
         <input type="submit" value="Editar Kata">
       </form>
+      
       <a class="boton-volver" href="#">Volver</a>  
     </div>
 
 
     <div id="divBienvenida">
+      
       <div id="banner">¡Bienvenido a DevTestCoach!</div>
         <form id="login-form">
           <label for="loginUsername">Username:</label>
           <input type="text" id="loginUsername" name="username" required>
           <br>
-
           <label for="loginPassword">Password:</label>
           <input type="password" id= "loginPassword" maxlength="8">
-
           <br>
-          <input type="submit" value="Iniciar">
+          <br> 
         </form>
-        <br>
-        <br>
-      <a href="#" id="boton-registro">Registrarse</a> 
+           <a href="#" id="boton-Inicio">Iniciar</a>   
+           <a href="#" id="boton-registro">Registrarse</a>
+         <div id="mensajeLogin-div">Usuario o contrasenia incorrectos</div>
     </div>
+    
 
     <div id="divRegistro" style="display: none;">
       <h1>Registrarse</h1>
@@ -130,8 +131,9 @@
 
         <br>
         <input type="submit" value="Registrarse">
-      </form>
-      <a class="boton-volver" href="#">Volver</a>  
+      </form> 
+      <br>
+      <a href="#" id="boton-volver-login">Volver</a>
     </div>
     
     <script type="module" src="./src/presenter.js"></script>
