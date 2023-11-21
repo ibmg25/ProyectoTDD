@@ -20,6 +20,15 @@ class Usuario{
             return this.contrasenia;
         }
     }
+
+    setUserName(nuevoUsername){
+        this.nombreDeUsuario=nuevoUsername;
+    }
+
+    setContrasenia(nuevaContrasenia){
+        this.contrasenia = nuevaContrasenia;
+    }
+
 }
 
 export default Usuario;

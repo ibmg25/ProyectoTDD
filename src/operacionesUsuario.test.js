@@ -74,5 +74,9 @@ describe("Editar datos de usuario", () => {
         expect(gestionUsuarios.editarUsuario("usuario","usernameExistente", "nuevaContrasenia")).toEqual(mensajeEsperado);
     });
     
-   
+    it("deberia devolverme la nueva informacion del usuario", () => {
+        const usuarioEsperado = new Usuario("nuevoUsername", "nuevaContrasenia");
+        gestionUsuarios.editarUsuario("usuario","nuevoUsername", "nuevaContrasenia")
+        expect(gestionUsuarios.obtenerUsuario("nuevoUsername")).toEqual(usuarioEsperado);
+    });
 });
