@@ -8,6 +8,17 @@ class Usuario{
     obtenerNombreDeUsuario(){
         return this.nombreDeUsuario;
     }
+    obtenerContrasenia()
+    {
+        return this.contrasenia;
+    }
+    validarContraseniaParaUnUsuario(nombre)
+    {
+        if(nombre==this.nombreDeUsuario)
+        {
+            return this.contrasenia;
+        }
+    }
 }
 
 export default Usuario;
