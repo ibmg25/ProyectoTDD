@@ -67,6 +67,12 @@ describe("Editar datos de usuario", () => {
         const mensajeEsperado = "¡Datos actualizados con éxito, nuevoUsername!";
         expect(gestionUsuarios.editarUsuario("usuario","nuevoUsername", "nuevaContrasenia")).toEqual(mensajeEsperado);
     });
+
+    it("deberia devolverme un mensaje de error si el nuevo nombre de usuario ya existe", () => {
+        const mensajeEsperado = "Lo sentimos, ese nombre de usuario ya está en uso.";
+        gestionUsuarios.registrarUsuario("usernameExistente", "contrasenia");
+        expect(gestionUsuarios.editarUsuario("usuario","usernameExistente", "nuevaContrasenia")).toEqual(mensajeEsperado);
+    });
     
    
 });

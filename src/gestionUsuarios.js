@@ -51,7 +51,11 @@ class GestionUsuarios{
     }
 
     editarUsuario(usuario,nuevoUsername, nuevaContrasenia){
-        const mensaje = "¡Datos actualizados con éxito, nuevoUsername!";
+        let mensaje = "¡Datos actualizados con éxito, nuevoUsername!";
+
+        if(this.obtenerUsuario(nuevoUsername)!==undefined){
+            mensaje = "Lo sentimos, ese nombre de usuario ya está en uso.";
+        }
         return mensaje;
 
     }
