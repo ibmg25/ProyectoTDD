@@ -34,6 +34,11 @@ class GestionUsuarios{
                 }
            }
         }
+        if(verificar==false)
+        {
+           let mensaje = "Lo sentimos, usuario o contrasenia incorrectos.";
+            return mensaje;
+        }
         return verificar;
     }
 
