@@ -10,7 +10,7 @@ const divRegistro = document.querySelector("#divRegistro");
 const botonCrearKata = document.querySelector(".boton-crear_kata");
 const botonRegistrar = document.querySelector("#boton-registro");
 const mensaje = document.querySelector("#mensaje2-div");
-const botonVolverLogin = document.querySelector("#boton-volver-login");
+//const botonVolverLogin = document.querySelector("#boton-volver-login");
 //const mensajeErrorLogin= document.querySelector("#mensajeLogin-div")
 //mensajeErrorLogin.style.display = "none";
 divCat.style.display = "none";
@@ -26,6 +26,7 @@ botonInicio.onclick = function()
    {
         divCat.style.display = "block";
         divBienvenida.style.display = "none";
+        botonCrearKata.style.display = "block"; 
         
    }
    else{
@@ -37,11 +38,16 @@ botonInicio.onclick = function()
    }
 
 }
+const botonVolverLogin = document.getElementsByClassName("boton-volver-login");
 
-botonVolverLogin.onclick = function() {
+for(let i = 0; i < botonVolverLogin.length; i++){
+    botonVolverLogin[i].onclick = function() {
+        divCat.style.display = "none";
         divBienvenida.style.display = "block";
         divRegistro.style.display="none";
     };
+}
+
 botonRegistrar.onclick = function() {
     divRegistro.style.display = "block";
     divBienvenida.style.display = "none";
