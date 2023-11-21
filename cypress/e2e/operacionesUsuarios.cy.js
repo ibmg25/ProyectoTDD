@@ -14,16 +14,32 @@ describe("Registrarse con usuario y contrasenia", () => {
       cy.get("#registrarse-form").should("be.visible");
     });
 
-    it("deberia mostrarme un mensaje de bienvenida y desplegar el catalogo", () => {
+    it("deberia volver al Login luego de registrarse", () => {
       cy.visit("/");
       cy.get('#boton-registro').click();
       cy.get("#registrarse-form").should("be.visible");
       cy.get("#username-registro").type("user");
       cy.get("#password-registro").type("123");
       cy.get("input[type='submit']").eq(4).click();
-      cy.get("#mensaje2-div").should("contain", "¡Bienvenido user! Tu registro se ha completado con éxito.");
       cy.get("#registrarse-form").should("not.be.visible");
-      cy.get("#divCatalogo").should("be.visible");
+      cy.get("#divBienvenida").should("be.visible");
+    });
+    it("deberia registrarse e iniciar sesion en el login", () => {
+      cy.visit("/");
+      cy.get('#boton-registro').click();
+      cy.get("#registrarse-form").should("be.visible");
+      cy.get("#username-registro").type("user");
+      cy.get("#password-registro").type("123");
+      cy.get("input[type='submit']").eq(4).click();
+      cy.get("#registrarse-form").should("not.be.visible");
+      cy.get("#divBienvenida").should("be.visible");
+      cy.get("#loginUsername").type("user");
+      cy.get("#loginPassword").type("123");
+      cy.get("#boton-Inicio").click();
+      cy.get("#divBienvenida").should("not.be.visible");
+
+
+
     });
 
 });
