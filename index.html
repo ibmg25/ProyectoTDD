@@ -14,6 +14,8 @@
     <div id="mensaje2-div"></div>
     <div id="divCatalogo">
       <h1>Catálogo</h1>
+      <a href="#" id="boton-mi-perfil">Mi Perfil</a>
+      
       <form id="buscar-form">
         <label for="titulo">Titulo:</label>
         <input type="titulo" id="titulo" />
@@ -137,10 +139,29 @@
 
         <br>
         <input type="submit" value="Registrarse">
+
       </form> 
       <br>
       <a class="boton-volver-login" href="#">Volver</a>  
       </div>
+    
+    <div id="divEditarUsuario" style="display: none;">
+      <h1>Editar mi información</h1>
+      <form id="editar-usuario-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username-registro" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id= "password-registro" maxlength="8">
+
+        <br>
+        <input type="submit" value="Actualizar">
+      </form>
+      <a class="boton-volver" href="#">Volver</a>  
+    </div>
+
+>>>>>>> 86bebba (avances interfaz)
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
