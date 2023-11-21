@@ -41,13 +41,13 @@ describe("Registrar con usuario y contraseña", () => {
     });
  
     it("deberia aceptar el login de un usuario", () => {
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia");
         expect(gestionUsuarios.VerficarUsuario("usuario1", "contrasenia")).toEqual(true);
         
     });
     it("deberia mostrar mensaje de error en el login de un usuario", () => {
         const mensajeEsperado = "Lo sentimos, usuario o contrasenia incorrectos."
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia");
         expect(gestionUsuarios.VerficarUsuario("usuario1", "contrasenia2")).toEqual(mensajeEsperado);
         
     });
