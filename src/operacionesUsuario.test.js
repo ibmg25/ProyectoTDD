@@ -53,3 +53,20 @@ describe("Registrar con usuario y contraseña", () => {
     });
 
 });
+
+
+describe("Editar datos de usuario", () => {
+
+    let gestionUsuarios;
+    beforeEach(() => {
+        gestionUsuarios = new GestionUsuarios();
+        gestionUsuarios.registrarUsuario("usuario", "contrasenia");
+    });
+  
+    it("deberia devolverme un mensaje si se han editado los datos del usuario con exito", () => {
+        const mensajeEsperado = "¡Datos actualizados con éxito, nuevoUsername!";
+        expect(gestionUsuarios.editarUsuario("usuario","nuevoUsername", "nuevaContrasenia")).toEqual(mensajeEsperado);
+    });
+    
+   
+});

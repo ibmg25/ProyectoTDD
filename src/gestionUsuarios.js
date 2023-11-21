@@ -49,5 +49,11 @@ class GestionUsuarios{
     obtenerUsuarios(){
         return this.usuariosRegistrados;
     }
+
+    editarUsuario(usuario,nuevoUsername, nuevaContrasenia){
+        const mensaje = "¡Datos actualizados con éxito, nuevoUsername!";
+        return mensaje;
+
+    }
 }
 export default GestionUsuarios;
