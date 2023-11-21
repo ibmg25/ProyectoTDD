@@ -10,14 +10,14 @@ class GestionUsuarios{
         return usuario;
     }
 
-    registrarUsuario(nombreDeUsuario, contrasenia){
+    registrarUsuario(nombreDeUsuario, rol, contrasenia){
         let mensaje = "¡Bienvenido " + nombreDeUsuario +"! Tu registro se ha completado con éxito.";
         
         if (this.obtenerUsuario(nombreDeUsuario) != undefined){
             mensaje = "Lo sentimos, este nombre de usuario ya está siendo utilizado.";
         }
         else{
-            const nuevoUsuario = new Usuario(nombreDeUsuario, contrasenia);
+            const nuevoUsuario = new Usuario(nombreDeUsuario, rol, contrasenia);
             this.usuariosRegistrados.push(nuevoUsuario);
         }
         return mensaje;
