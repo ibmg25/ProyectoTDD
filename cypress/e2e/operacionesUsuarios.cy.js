@@ -19,6 +19,7 @@ describe("Registrarse con usuario y contrasenia", () => {
       cy.get('#boton-registro').click();
       cy.get("#registrarse-form").should("be.visible");
       cy.get("#username-registro").type("user");
+      cy.get("#rol-registro").select("Estudiante");
       cy.get("#password-registro").type("123");
       cy.get("input[type='submit']").eq(4).click();
       cy.get("#registrarse-form").should("not.be.visible");

@@ -10,44 +10,44 @@ describe("Registrar con usuario y contraseña", () => {
   
     it("deberia devolverme un mensaje de bienvenida", () => {
         const mensajeEsperado = "¡Bienvenido usuario! Tu registro se ha completado con éxito.";
-        expect(gestionUsuarios.registrarUsuario("usuario", "contrasenia")).toEqual(mensajeEsperado);
+        expect(gestionUsuarios.registrarUsuario("usuario", "estudiante","contrasenia")).toEqual(mensajeEsperado);
     });
 
     it("deberia devolverme un mensaje de bienvenida con el nombre del usuario", () => {
         const mensajeEsperado = "¡Bienvenido user123! Tu registro se ha completado con éxito.";
-        expect(gestionUsuarios.registrarUsuario("user123", "contrasenia")).toEqual(mensajeEsperado);
+        expect(gestionUsuarios.registrarUsuario("user123", "estudiante", "contrasenia")).toEqual(mensajeEsperado);
     });
 
     it("deberia devolverme la informacion del usuario registrado", () => {
-        const usuarioEsperado = new Usuario("usuario", "contrasenia");
-        gestionUsuarios.registrarUsuario("usuario", "contrasenia");
+        const usuarioEsperado = new Usuario("usuario", "estudiante", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario", "estudiante", "contrasenia");
         expect(gestionUsuarios.obtenerUsuario("usuario")).toEqual(usuarioEsperado);
     });
     
     it("deberia devolverme la lista de usuarios registrados", () => {
-        const usuario1 = new Usuario("usuario1", "contrasenia");
-        const usuario2 = new Usuario("usuario2", "contrasenia");
+        const usuario1 = new Usuario("usuario1", "estudiante", "contrasenia");
+        const usuario2 = new Usuario("usuario2", "estudiante", "contrasenia");
         const usuariosEsperados = [usuario1, usuario2];
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
-        gestionUsuarios.registrarUsuario("usuario2", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario2", "estudiante", "contrasenia");
         expect(gestionUsuarios.obtenerUsuarios()).toEqual(usuariosEsperados);
     });
 
     it("deberia devolver un mensaje de error si se trata de registrar otro usuario con el mismo nombre de usuario", () => {
         const mensajeEsperado = "Lo sentimos, este nombre de usuario ya está siendo utilizado."
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
-        expect(gestionUsuarios.registrarUsuario("usuario1", "contrasenia")).toEqual(mensajeEsperado);
-        
+        gestionUsuarios.registrarUsuario("usuario1","estudiante", "contrasenia");
+        expect(gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia")).toEqual(mensajeEsperado);
+
     });
  
     it("deberia aceptar el login de un usuario", () => {
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia");
         expect(gestionUsuarios.VerficarUsuario("usuario1", "contrasenia")).toEqual(true);
         
     });
     it("deberia mostrar mensaje de error en el login de un usuario", () => {
         const mensajeEsperado = "Lo sentimos, usuario o contrasenia incorrectos."
-        gestionUsuarios.registrarUsuario("usuario1", "contrasenia");
+        gestionUsuarios.registrarUsuario("usuario1", "estudiante", "contrasenia");
         expect(gestionUsuarios.VerficarUsuario("usuario1", "contrasenia2")).toEqual(mensajeEsperado);
         
     });

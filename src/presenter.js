@@ -26,6 +26,7 @@ botonInicio.onclick = function()
    {
         divCat.style.display = "block";
         divBienvenida.style.display = "none";
+        botonCrearKata.style.display = "block"; 
         
    }
    else{

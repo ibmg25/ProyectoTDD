@@ -1,7 +1,8 @@
 class Usuario{
 
-    constructor(nombreDeUsuario, contrasenia) {
+    constructor(nombreDeUsuario, rol, contrasenia) {
         this.nombreDeUsuario = nombreDeUsuario;
+        this.rol = rol;
         this.contrasenia = contrasenia;
     }
 
