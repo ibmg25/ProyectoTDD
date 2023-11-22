@@ -11,8 +11,8 @@ const botonCrearKata = document.querySelector(".boton-crear_kata");
 const botonRegistrar = document.querySelector("#boton-registro");
 const mensaje = document.querySelector("#mensaje2-div");
 //const botonVolverLogin = document.querySelector("#boton-volver-login");
-//const mensajeErrorLogin= document.querySelector("#mensajeLogin-div")
-//mensajeErrorLogin.style.display = "none";
+const mensajeErrorLogin= document.querySelector("#mensajeLogin-div")
+mensajeErrorLogin.style.display = "none";
 divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
 divBienvenida.style.display = "block";
@@ -27,12 +27,11 @@ botonInicio.onclick = function()
         divCat.style.display = "block";
         divBienvenida.style.display = "none";
         botonCrearKata.style.display = "block"; 
-        
    }
    else{
         divBienvenida.style.display = "block";
-       // mensajeErrorLogin.textContente=gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin);
-        //mensajeErrorLogin.style.display = "block";
+        mensajeErrorLogin.textContente=gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin);
+        mensajeErrorLogin.style.display = "block";
        
    }
 
@@ -277,10 +276,9 @@ formRegistrar.addEventListener("submit", (event) => {
     
     mensaje.textContent = gestionUsuarios.registrarUsuario(username, password);
     mensaje.style.display = "block";
-
     divCat.style.display = "none";
     divRegistro.style.display = "none";
-    divBienvenida.style.display="block"
+    divBienvenida.style.display="block";
 
 
     catalogoAMostrar = catalogo;

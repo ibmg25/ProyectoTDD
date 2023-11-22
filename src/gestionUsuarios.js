@@ -41,7 +41,6 @@ class GestionUsuarios{
            
         }
         return mensaje;
-       
     }
 
 
