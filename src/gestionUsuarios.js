@@ -27,6 +27,8 @@ class GestionUsuarios{
         let verificar=false;        
         let mensaje = "Lo sentimos, usuario o contrasenia incorrectos.";
         for (let i = 0; i < this.usuariosRegistrados.length; i++) {
+            console.log(this.usuariosRegistrados[i].obtenerNombreDeUsuario())
+            console.log(this.usuariosRegistrados[i].obtenerContrasenia())
            if(this.usuariosRegistrados[i].obtenerNombreDeUsuario()==nombre)
            {
                 if(this.usuariosRegistrados[i].obtenerContrasenia()==contrasenia)

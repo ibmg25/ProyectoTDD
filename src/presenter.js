@@ -22,6 +22,7 @@ botonInicio.onclick = function()
    const contrasenia= document.querySelector("#loginPassword");
    const nombreUsuario=nombre.value;
    const contraseniaLogin=contrasenia.value;
+   console.log(nombreUsuario + " " + contraseniaLogin);
    if(gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin)==true)
    {
         divCat.style.display = "block";
