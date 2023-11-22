@@ -265,6 +265,7 @@ formEditarKata.addEventListener("submit", (event) => {
 
 const formRegistrar = document.querySelector("#registrarse-form");
 const usernameReg = document.querySelector("#username-registro");
+const rol = document.querySelector("#rol-registro")
 const passwordReg = document.querySelector("#password-registro");
 
 
@@ -273,9 +274,10 @@ const passwordReg = document.querySelector("#password-registro");
 formRegistrar.addEventListener("submit", (event) => {
     event.preventDefault(); 
     const username = usernameReg.value;
+    const rolSeleccionado = rol.value;
     const password = passwordReg.value;
     
-    mensaje.textContent = gestionUsuarios.registrarUsuario(username, password);
+    mensaje.textContent = gestionUsuarios.registrarUsuario(username, rolSeleccionado, password);
     mensaje.style.display = "block";
     divCat.style.display = "none";
     divRegistro.style.display = "none";
