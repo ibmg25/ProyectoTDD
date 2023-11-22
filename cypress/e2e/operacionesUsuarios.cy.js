@@ -52,13 +52,16 @@ beforeEach(() => {
   cy.get("#username-registro").type("user");
   cy.get("#password-registro").type("123");
   cy.get("input[type='submit']").eq(4).click();
+  cy.get("#loginUsername").type("user");
+  cy.get("#loginPassword").type("123");
+  cy.get("#boton-Inicio").click();
 });
 
 
 describe("Editar datos del usuario", () => {
   it("deberia devolverme los datos actuales del usuario que quiero editar", () => {
     cy.get('#boton-mi-perfil').click();
-    cy.get("#username-registro").should("have.value", "usuario");
+    cy.get("#username-registro").should("have.value", "user");
     cy.get("#password-registro").should("have.value", "123");
   });
 

@@ -265,7 +265,7 @@ formEditarKata.addEventListener("submit", (event) => {
 
 const formRegistrar = document.querySelector("#registrarse-form");
 const usernameReg = document.querySelector("#username-registro");
-const rol = document.querySelector("#rol-registro")
+const rol = document.querySelector("#rol-registro");
 const passwordReg = document.querySelector("#password-registro");
 
 
@@ -289,3 +289,33 @@ formRegistrar.addEventListener("submit", (event) => {
 
 });
 
+const divEditarUser = document.querySelector("#divEditarUsuario");
+
+document.getElementById("boton-mi-perfil").onclick = function() {
+    divCat.style.display = "none";
+    divEditarUser.style.display = "block";
+};
+
+
+const formEditarUsuario = document.querySelector("#divEditarUsuario");
+const usernameEdit = document.querySelector("#username-editar");
+const passwordEdit = document.querySelector("#password-editar");
+
+formEditarUsuario.addEventListener("submit", (event) => {
+    event.preventDefault(); 
+    const titulo = tituloKataEditar.value;
+    const categoria = categoriaKataEditar.value;
+    const dificultad = dificultadKataEditar.value;
+    const descripcion = descripcionKataEditar.value;
+    // const kata = new Kata(titulo, categoria, dificultad, descripcion);
+    
+    mensaje.textContent = catalogo.editarKata(tituloOriginal, titulo, categoria, dificultad, descripcion);
+    mensaje.style.display = "block";
+
+    divCat.style.display = "block";
+    divEditar.style.display = "none";
+
+    catalogoAMostrar = catalogo;
+    generarListaKatasHTML();
+
+});
