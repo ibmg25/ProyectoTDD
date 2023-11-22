@@ -30,7 +30,6 @@ botonInicio.onclick = function()
         
    }
    else{
-   
         divBienvenida.style.display = "block";
        // mensajeErrorLogin.textContente=gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin);
         //mensajeErrorLogin.style.display = "block";
