@@ -1,4 +1,4 @@
-import GestionUsuarios from "../../src/gestionUsuarios";
+//import GestionUsuarios from "../../src/gestionUsuarios";
 import Usuario from "../../src/usuario";
 
 describe("Registrarse con usuario y contrasenia", () => {
