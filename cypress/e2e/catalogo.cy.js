@@ -28,6 +28,13 @@ describe("Mostrar lista de katas", () => {
     cy.should("have.length",1 ); // Asegura que haya al menos un elemento .kata dentro del div
   });
 
+  
+  it("deberia mostrar la kata buscada por descripcion", () => {
+    cy.get("#descripcion").type("Descripcion vacia");
+    cy.get("#buscar-button").click() // Busca elementos con la clase .kata dentro del div
+    cy.should("have.length",1 ); // Asegura que haya al menos un elemento .kata dentro del div
+  });
+
   it("deberia mostrar la kata buscada por dificultad", () => {
  
     cy.get("#lista-katas-div")
