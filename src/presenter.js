@@ -10,14 +10,21 @@ const divRegistro = document.querySelector("#divRegistro");
 const botonCrearKata = document.querySelector(".boton-crear_kata");
 const botonRegistrar = document.querySelector("#boton-registro");
 const mensaje = document.querySelector("#mensaje2-div");
-//const botonVolverLogin = document.querySelector("#boton-volver-login");
 const mensajeErrorLogin= document.querySelector("#mensajeLogin-div")
 mensajeErrorLogin.style.display = "none";
 divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
 divBienvenida.style.display = "block";
 
+// -------------- INICIALIZAR USUARIOS ---------------- 
+
 gestionUsuarios.registrarUsuario("admin", "Docente", "123");
+
+
+
+
+
+// -------------- INICIO APP ---------------- 
 
 let usuarioActual = null;
 botonInicio.onclick = function()
@@ -56,12 +63,17 @@ botonRegistrar.onclick = function() {
     divBienvenida.style.display = "none";
 };
 
-let divListaKatas = document.querySelector("#lista-katas-div");
 
+
+
+
+
+
+// -------------- INICIALIZAR CATALOGO ---------------- 
+
+let divListaKatas = document.querySelector("#lista-katas-div");
 let catalogo = new Catalogo();
 let catalogoAMostrar = catalogo;
-
-
 
 const kata1 = new Kata("Kata", "Validacion y formularios", "Intermedia");
 const kata2 = new Kata("Kata 2", "Validacion y formularios", "Intermedia", "nueva descripcion");
@@ -96,6 +108,9 @@ function actualizarEventoBotonesEditar(){
     }
 }
 
+
+// -------------- ELIMINAR KATA ---------------- 
+
 const botonesEliminar = document.getElementsByClassName("boton-eliminar");
 
 function activarBotonesEliminr(){
@@ -107,6 +122,13 @@ function activarBotonesEliminr(){
         };
     }
 }
+
+
+
+
+
+
+// -------------- GENERAR CATALOGO ---------------- 
 
 function generarListaKatasHTML(){
 
@@ -123,6 +145,12 @@ function generarListaKatasHTML(){
 }
 generarListaKatasHTML();
 
+
+
+
+
+// -------------- BOTONES VOLVER ATRAS ---------------- 
+
 const botonesVolver = document.getElementsByClassName("boton-volver");
 
 for(let i = 0; i < botonesVolver.length; i++){
@@ -135,6 +163,7 @@ for(let i = 0; i < botonesVolver.length; i++){
 
 
 
+// -------------- FILTROS CATALOGO KATAS ---------------- 
 
 const tituloABuscar = document.querySelector("#titulo");
 const formBuscarTitulo = document.querySelector("#buscar-form");
@@ -199,6 +228,12 @@ filtroCategoria.addEventListener("change", (event) => {
 });
 
 
+
+
+
+
+// -------------- CREAR KATA ---------------- 
+
 const divCrear = document.querySelector("#divCrear");
 
 document.getElementById("nuevaKata").onclick = function() {
@@ -234,13 +269,9 @@ formCrearKata.addEventListener("submit", (event) => {
 
 
 
-/////////// Editar kata
 
 
-
-
-
-
+// -------------- EDITAR KATA ---------------- 
 
 const tituloKataEditar = document.querySelector("#titulo-kata-editar");
 const categoriaKataEditar = document.querySelector("#categoria-kata-editar");
@@ -267,13 +298,16 @@ formEditarKata.addEventListener("submit", (event) => {
 });
 
 
+
+
+
+
+// -------------- REGISTRAR USUARIO ---------------- 
+
 const formRegistrar = document.querySelector("#registrarse-form");
 const usernameReg = document.querySelector("#username-registro");
 const rol = document.querySelector("#rol-registro");
 const passwordReg = document.querySelector("#password-registro");
-
-
-//let gestionUsuarios = new GestionUsuarios();
 
 formRegistrar.addEventListener("submit", (event) => {
     event.preventDefault(); 
@@ -293,8 +327,15 @@ formRegistrar.addEventListener("submit", (event) => {
 
 });
 
-const divEditarUser = document.querySelector("#divEditarUsuario");
 
+
+
+
+
+
+// -------------- EDITAR DATOS ---------------- 
+
+const divEditarUser = document.querySelector("#divEditarUsuario");
 
 document.getElementById("boton-mi-perfil").onclick = function() {
     divCat.style.display = "none";
@@ -302,7 +343,6 @@ document.getElementById("boton-mi-perfil").onclick = function() {
     document.getElementById("username-editar").value = usuarioActual.obtenerNombreDeUsuario();
     document.getElementById("password-editar").value = usuarioActual.obtenerContrasenia();
 };
-
 
 const formEditarUsuario = document.querySelector("#divEditarUsuario");
 const usernameEdit = document.querySelector("#username-editar");
@@ -312,17 +352,11 @@ formEditarUsuario.addEventListener("submit", (event) => {
     event.preventDefault(); 
     const userActual = usuarioActual.obtenerNombreDeUsuario();
     const nuevoUsername = usernameEdit.value;
-    const nuevoPassword = passwordEdit.value;
-    // const kata = new Kata(titulo, categoria, dificultad, descripcion);
-    
-    
+    const nuevoPassword = passwordEdit.value;    
     mensaje.textContent = gestionUsuarios.editarUsuario(userActual, nuevoUsername, nuevoPassword);
     mensaje.style.display = "block";
-
     divCat.style.display = "block";
     divEditarUser.style.display = "none";
-
     catalogoAMostrar = catalogo;
     generarListaKatasHTML();
-
 });
