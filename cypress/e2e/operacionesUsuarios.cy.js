@@ -61,8 +61,17 @@ beforeEach(() => {
 describe("Editar datos del usuario", () => {
   it("deberia devolverme los datos actuales del usuario que quiero editar", () => {
     cy.get('#boton-mi-perfil').click();
-    cy.get("#username-registro").should("have.value", "user");
-    cy.get("#password-registro").should("have.value", "123");
+    cy.get("#username-editar").should("have.value", "user");
+    cy.get("#password-editar").should("have.value", "123");
   });
 
+  it("deberia mostrarme un mensaje de exito despues de editar mis datos", () => {
+    cy.get('#boton-mi-perfil').click();
+    cy.get("#username-editar").should("have.value", "user");
+    cy.get("#password-editar").should("have.value", "123");
+    cy.get("#username-editar").clear().type("userEditado");
+    cy.get("#password-editar").clear().type("123Editado");
+    cy.get("input[type='submit']").eq(5).click();
+    cy.get("#mensaje2-div").should("contain", "¡Datos actualizados con éxito, userEditado!");
+  });
 });

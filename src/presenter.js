@@ -16,6 +16,8 @@ mensajeErrorLogin.style.display = "none";
 divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
 divBienvenida.style.display = "block";
+
+let usuarioActual = null;
 botonInicio.onclick = function()
 {
    const nombre=document.querySelector("#loginUsername");
@@ -28,6 +30,7 @@ botonInicio.onclick = function()
         divCat.style.display = "block";
         divBienvenida.style.display = "none";
         botonCrearKata.style.display = "block"; 
+        usuarioActual = gestionUsuarios.obtenerUsuario(nombreUsuario);
    }
    else{
         divBienvenida.style.display = "block";
@@ -291,9 +294,12 @@ formRegistrar.addEventListener("submit", (event) => {
 
 const divEditarUser = document.querySelector("#divEditarUsuario");
 
+
 document.getElementById("boton-mi-perfil").onclick = function() {
     divCat.style.display = "none";
     divEditarUser.style.display = "block";
+    document.getElementById("username-editar").value = usuarioActual.obtenerNombreDeUsuario();
+    document.getElementById("password-editar").value = usuarioActual.obtenerContrasenia();
 };
 
 
@@ -303,17 +309,17 @@ const passwordEdit = document.querySelector("#password-editar");
 
 formEditarUsuario.addEventListener("submit", (event) => {
     event.preventDefault(); 
-    const titulo = tituloKataEditar.value;
-    const categoria = categoriaKataEditar.value;
-    const dificultad = dificultadKataEditar.value;
-    const descripcion = descripcionKataEditar.value;
+    const userActual = usuarioActual.obtenerNombreDeUsuario();
+    const nuevoUsername = usernameEdit.value;
+    const nuevoPassword = passwordEdit.value;
     // const kata = new Kata(titulo, categoria, dificultad, descripcion);
     
-    mensaje.textContent = catalogo.editarKata(tituloOriginal, titulo, categoria, dificultad, descripcion);
+    
+    mensaje.textContent = gestionUsuarios.editarUsuario(userActual, nuevoUsername, nuevoPassword);
     mensaje.style.display = "block";
 
     divCat.style.display = "block";
-    divEditar.style.display = "none";
+    divEditarUser.style.display = "none";
 
     catalogoAMostrar = catalogo;
     generarListaKatasHTML();
