@@ -88,6 +88,13 @@ catalogo.insertarKata(kata4);
 catalogo.insertarKata(kata5);
 catalogo.insertarKata(kata6);
 
+
+
+
+
+
+// -------------- BOTONES EDITAR ---------------- 
+
 const divEditar = document.querySelector("#divEditar");
 const formEditarKata = document.querySelector("#editar_kata-form");
 const botonesEditar = document.getElementsByClassName("boton-editar");
@@ -107,6 +114,10 @@ function actualizarEventoBotonesEditar(){
         };
     }
 }
+
+
+
+
 
 
 // -------------- ELIMINAR KATA ---------------- 
