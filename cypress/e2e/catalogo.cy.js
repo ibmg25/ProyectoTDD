@@ -4,7 +4,7 @@ beforeEach(() => {
   cy.get("#registrarse-form").should("be.visible");
   cy.get("#username-registro").type("user");
   cy.get("#password-registro").type("123");
-  cy.get("input[type='submit']").eq(4).click();
+  cy.get("input[type='submit']").eq(5).click();
   cy.get("#loginUsername").type("user");
   cy.get("#loginPassword").type("123");
   cy.get("#boton-Inicio").click();
@@ -63,27 +63,3 @@ describe("Filtrar por categorias", () => {
   });
 });
 
-describe("Mostrar lista de katas", () => {
-  
-  it("deberia eliminar la kata seleccionada", () => {
-
-    cy.get("#lista-katas-div").should("contain", 'Kata 4')
-
-    cy.get(".boton-eliminar").eq(3).click();
-
-    cy.get("#lista-katas-div").should("not.contain", 'Kata 4')
-
-  });
-
-  it("deberia eliminar varias katas seleccionadas", () => {
-
-    cy.get("#lista-katas-div").should("contain", 'Kata 2')
-    cy.get(".boton-eliminar").eq(1).click();
-    cy.get("#lista-katas-div").should("not.contain", 'Kata 2')
-
-    cy.get("#lista-katas-div").should("contain", 'Kata 3')
-    cy.get(".boton-eliminar").eq(1).click();
-    cy.get("#lista-katas-div").should("not.contain", 'Kata 3')
-
-  });
-});

@@ -4,7 +4,7 @@ beforeEach(() => {
     cy.get("#registrarse-form").should("be.visible");
     cy.get("#username-registro").type("user");
     cy.get("#password-registro").type("123");
-    cy.get("input[type='submit']").eq(4).click();
+    cy.get("input[type='submit']").eq(5).click();
     cy.get("#loginUsername").type("user");
     cy.get("#loginPassword").type("123");
     cy.get("#boton-Inicio").click();
@@ -38,7 +38,7 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#categoria-kata-editar").clear().type("Validacion y formularios");
         cy.get("#dificultad-kata-editar").select("Facil");
         cy.get("#descripcion-kata-editar").clear().type("Nueva descripcion");
-        cy.get("input[type='submit']").eq(3).click();
+        cy.get("input[type='submit']").eq(4).click();
         cy.get("#mensaje2-div").should("contain", "Kata editada con éxito.");
     });
 
@@ -48,7 +48,7 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#categoria-kata-editar").clear().type("Validacion y formularios");
         cy.get("#dificultad-kata-editar").select("Facil");
         cy.get("#descripcion-kata-editar").clear().type("Nueva descripcion");
-        cy.get("input[type='submit']").eq(3).click();
+        cy.get("input[type='submit']").eq(4).click();
         cy.get(".title-kata").eq(0).should("contain", "NuevoTitulo");
     });
 
@@ -61,3 +61,28 @@ describe("Editar una kata del catalogo", () => {
         cy.get("#descripcion-kata-editar").should("have.value", "Descripcion vacia");
     });
 });
+
+describe("Eliminar katas", () => {
+  
+    it("deberia eliminar la kata seleccionada", () => {
+  
+      cy.get("#lista-katas-div").should("contain", 'Kata 4')
+  
+      cy.get(".boton-eliminar").eq(3).click();
+  
+      cy.get("#lista-katas-div").should("not.contain", 'Kata 4')
+  
+    });
+  
+    it("deberia eliminar varias katas seleccionadas", () => {
+  
+      cy.get("#lista-katas-div").should("contain", 'Kata 2')
+      cy.get(".boton-eliminar").eq(1).click();
+      cy.get("#lista-katas-div").should("not.contain", 'Kata 2')
+  
+      cy.get("#lista-katas-div").should("contain", 'Kata 3')
+      cy.get(".boton-eliminar").eq(1).click();
+      cy.get("#lista-katas-div").should("not.contain", 'Kata 3')
+  
+    });
+  });

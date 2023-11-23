@@ -21,7 +21,7 @@ describe("Registrarse con usuario y contrasenia", () => {
       cy.get("#username-registro").type("user");
       cy.get("#rol-registro").select("Estudiante");
       cy.get("#password-registro").type("123");
-      cy.get("input[type='submit']").eq(4).click();
+      cy.get("input[type='submit']").eq(5).click();
       cy.get("#registrarse-form").should("not.be.visible");
       cy.get("#divBienvenida").should("be.visible");
     });
@@ -31,7 +31,7 @@ describe("Registrarse con usuario y contrasenia", () => {
       cy.get("#registrarse-form").should("be.visible");
       cy.get("#username-registro").type("user");
       cy.get("#password-registro").type("123");
-      cy.get("input[type='submit']").eq(4).click();
+      cy.get("input[type='submit']").eq(5).click();
       cy.get("#registrarse-form").should("not.be.visible");
       cy.get("#divBienvenida").should("be.visible");
       cy.get("#loginUsername").type("user");
@@ -51,7 +51,7 @@ beforeEach(() => {
   cy.get("#registrarse-form").should("be.visible");
   cy.get("#username-registro").type("user");
   cy.get("#password-registro").type("123");
-  cy.get("input[type='submit']").eq(4).click();
+  cy.get("input[type='submit']").eq(5).click();
   cy.get("#loginUsername").type("user");
   cy.get("#loginPassword").type("123");
   cy.get("#boton-Inicio").click();
@@ -71,7 +71,7 @@ describe("Editar datos del usuario", () => {
     cy.get("#password-editar").should("have.value", "123");
     cy.get("#username-editar").clear().type("userEditado");
     cy.get("#password-editar").clear().type("123Editado");
-    cy.get("input[type='submit']").eq(5).click();
+    cy.get("input[type='submit']").eq(6).click();
     cy.get("#mensaje2-div").should("contain", "¡Datos actualizados con éxito, userEditado!");
   });
 });
