@@ -169,6 +169,7 @@ for(let i = 0; i < botonesVolver.length; i++){
         divCat.style.display = "block";
         divEditar.style.display = "none";
         divCrear.style.display = "none";
+        divEditarUser.style.display = "none";
     };
 }
 
