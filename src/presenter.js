@@ -17,6 +17,8 @@ divCat.style.display = "none";
 botonCrearKata.style.display = "none"; 
 divBienvenida.style.display = "block";
 
+gestionUsuarios.registrarUsuario("admin", "Docente", "123");
+
 let usuarioActual = null;
 botonInicio.onclick = function()
 {
@@ -36,9 +38,8 @@ botonInicio.onclick = function()
         divBienvenida.style.display = "block";
         mensajeErrorLogin.textContente=gestionUsuarios.VerficarUsuario(nombreUsuario,contraseniaLogin);
         mensajeErrorLogin.style.display = "block";
-       
    }
-
+   mensaje.style.display = "none";
 }
 const botonVolverLogin = document.getElementsByClassName("boton-volver-login");
 
