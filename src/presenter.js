@@ -181,6 +181,8 @@ const formBuscarTitulo = document.querySelector("#buscar-form");
 const formBorrarFiltros = document.querySelector("#eliminarFiltros-form");
 const filtroDificultad = document.querySelector("#filtrar-dificultad-kata");
 const filtroCategoria = document.querySelector("#filtrar-categoria-kata");
+const descripcionABuscar = document.querySelector("#descripcion");
+const formBuscarDescripcion = document.querySelector("#descripcion-form");
 
 formBorrarFiltros.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -236,6 +238,19 @@ filtroCategoria.addEventListener("change", (event) => {
         generarListaKatasHTML();
     }
     
+});
+
+formBuscarDescripcion.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const descripcion = descripcionABuscar.value;
+    const catalogo2 = new Catalogo();
+    const kataBuscada=catalogo.buscarPorDescripcion(descripcion);
+    if (kataBuscada != null) {
+        catalogo2.insertarKata(kataBuscada);
+    }
+    catalogoAMostrar = catalogo2;
+    generarListaKatasHTML();
 });
 
 
