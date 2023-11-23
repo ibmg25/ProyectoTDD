@@ -62,6 +62,16 @@ class Validador{
         }
         return valido;
     }
+
+    validarDescripcionKata(kata){
+        let valido = false;
+    
+        if (kata.getDescripcion().length > 0) {
+            valido = true;
+        }
+        return valido;
+
+    }
 }
 
 
